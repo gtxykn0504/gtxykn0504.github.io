@@ -1,0 +1,271 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Excel教程第二期-进阶版函数 | Kegongteng</title>
+
+<link rel="shortcut icon" href="https://kegongteng.top/favicon.ico?v=1704713834413">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kegongteng.top/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Kegongteng
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="https://kgthe.top/" class="menu gt-a-link">
+                    知识库
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/archives" class="menu gt-a-link">
+                    文章
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/tags" class="menu gt-a-link">
+                    专栏
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://space.bilibili.com/433513379" class="menu gt-a-link">
+                    Bilibili
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/friends" class="menu gt-a-link">
+                    朋友
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/web" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1704713834413"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Excel教程第二期-进阶版函数
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-01-08 ·
+                    </time>
+                    
+                        <a href="https://kegongteng.top/juoV1LmbZ/" class="post-tags">
+                            # Excel
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <blockquote>
+<p>本期教程由于个人时间原因，并未制作视频版本。为了有一定的效果，您可以下载本期的示范Excel文件，以此来帮助你学习： <a href="http://share.kgthe.top/dUArzi">文件下载链接</a></p>
+</blockquote>
+<h1 id="直接砍掉小数点">直接砍掉小数点</h1>
+<p>TRUNC函数是将数字的小数部分直接截去，返回整数，不讲究四舍五入。<br>
+<code>语法：=TRUNC(number, [num_digits])</code></p>
+<blockquote>
+<p>要求：TRUNC 函数语法的参数<br>
+1.number必需。 需要截尾取整的数字。<br>
+2.[num_digits]可选。一般都不需要第二个参数。</p>
+</blockquote>
+<p>案例：<br>
+=trunk(9.99)，返回值9<br>
+=trunk(4.12)，返回值4<br>
+=trunk(0.32)，返回值0<br>
+=trunk(-8.43)，返回值-8</p>
+<h1 id="四舍五入小数点">四舍五入小数点</h1>
+<p>ROUND函数将数字四舍五入到指定的位数。<br>
+<code>语法：=ROUND(number, num_digits)</code></p>
+<blockquote>
+<p>要求</p>
+</blockquote>
+<ol>
+<li>number必需参数。 要四舍五入的数字。</li>
+<li>num_digits必需参数。 要进行四舍五入运算的位数。</li>
+</ol>
+<p>案例：Excel中小数点后为0时，默认省略不显示。</p>
+<h1 id="随机整数">随机整数</h1>
+<p>RANDBETWEEN函数是返回指定的最小值和指定最大值之间的一个随机整数。<br>
+<code>语法：RANDBETWEEN（bottom,top）</code></p>
+<blockquote>
+<p>要求</p>
+</blockquote>
+<ol>
+<li>Bottom参数： 指定的最小整数。</li>
+<li>Top参数： 指定的最大整数。</li>
+</ol>
+<h1 id="随机小数">随机小数</h1>
+<p>Rand函数是返回一个大于等于 0 及小于 1随机实数。<br>
+<code>语法：RAND()</code></p>
+<h1 id="求余函数">求余函数</h1>
+<p>mod函数是一个求余函数,是用于返回两数相除的余数，返回结果的符号与除数的符号相同。<br>
+<code>语法：=MOD(被除数,除数)</code></p>
+<h1 id="奇偶数判断">奇偶数判断</h1>
+<p>ISODD函数是一个奇数判断函数，如果数字为奇数则返回TRUE<br>
+<code>语法：=ISODD（）</code><br>
+ISEVEN函数是一个偶数判断函数，如果数字为偶数则返回TRUE<br>
+<code>语法：=ISEVEN（）</code></p>
+<h1 id="统计数字">统计数字</h1>
+<p>COUNT函数给定数据集合或者单元格区域中数据的个数进行计数，COUNT函数只能对数字数据进行统计，对于空单元格、逻辑值或者文本数据将不统计。<br>
+<code>语法：=COUNT(G3:G14)</code></p>
+<h1 id="统计非空单元格">统计非空单元格</h1>
+<p>COUNTA函数是计算区域内非空单元格的个数。<br>
+<code>语法：=COUNTA(G3:G14)</code></p>
+<h1 id="统计空白单元格">统计空白单元格</h1>
+<p>COUNTBLANK函数是计算区域内空白单元格的个数。<br>
+<code>语法：=COUNTBLANK(G3:G14)</code></p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kegongteng.top/fenglei/" class="post-title gt-a-link">
+                    我的网站分类
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'KAL00WLw3y25n9K0PMQy0fSs-gzGzoHsz',
+		appKey: 'yGr52WfBhUFrO4kc6KM40YQ6',
+		avatar: '',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: '发表一个友好的言论吧',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Blogger / Technophile / Student</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://kegongteng.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

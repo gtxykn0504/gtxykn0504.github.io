@@ -1,0 +1,307 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>关于blog/网站的简易搭建 | Kegongteng</title>
+
+<link rel="shortcut icon" href="https://kegongteng.top/favicon.ico?v=1704713834413">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kegongteng.top/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Kegongteng
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="https://kgthe.top/" class="menu gt-a-link">
+                    知识库
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/archives" class="menu gt-a-link">
+                    文章
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/tags" class="menu gt-a-link">
+                    专栏
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://space.bilibili.com/433513379" class="menu gt-a-link">
+                    Bilibili
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/friends" class="menu gt-a-link">
+                    朋友
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/web" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1704713834413"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    关于blog/网站的简易搭建
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-10-03 ·
+                    </time>
+                    
+                        <a href="https://kegongteng.top/website/" class="post-tags">
+                            # 网站与博客
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="一what">一.What？</h1>
+<blockquote>
+<p>”何为blog？“</p>
+</blockquote>
+<p>很早之前，我就已经很想聊一聊关于blog这件事以及搭建网站的过程。但是，网站也有许多的教材是关于搭建网站的，但是文章内容大多数是比较专业的，或者内容不详细，对与普通人可能会有阅读困难，所以本篇文章就是对小白或者不爱折腾的人搭建网站的教程。如果你是一个对网站有“向往之心”的人，你可以看看这篇文章，或许对你有帮助。</p>
+<p>我其实搞这个网站有一点原因是因为<sub>装逼</sub> 更好的分享文件与观点，也是有一个可以随心所欲使用的个性化email。在搭建这个网站之前希望你可以先好好的想想你的网站的作用，这很重要，<strong>不同的需求有不同的表达形式</strong>。</p>
+<h1 id="二how">二.How？</h1>
+<h2 id="21购买域名">2.1购买域名</h2>
+<blockquote>
+<p>Tips：域名与DNS解析内容见 <a href="https://kgthe.top/technology-yuming">信息技术-域名与DNS解析</a></p>
+</blockquote>
+<p>1.选择域名注册商</p>
+<p>选择正规的域名注册商，进行域名购买，比如腾讯云，阿里云，华为云等服务。</p>
+<blockquote>
+<p>防诈小提示：如果您心爱的域名已被他人注册，最好不要私下与域名主进行交易。</p>
+</blockquote>
+<p>2. 以阿里云为例子，我们要先注册阿里云账户，然后经过实名认证。</p>
+<figure data-type="image" tabindex="1"><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/A_3Ep0xPn.png" alt="" loading="lazy"></figure>
+<blockquote>
+<p>注意：强烈建议个人账号不要用于企业业务的购买！一定分清个人认证和企业认证：完成企业实名认证的账号归属为企业。完成个人实名认证的账号归属为个人。</p>
+</blockquote>
+<p>3.在查询框中输入您想要的域名，单击<strong>查域名</strong>。</p>
+<figure data-type="image" tabindex="2"><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/A-ovg-Rk4.png" alt="" loading="lazy"></figure>
+<p>3. 对于查询结果为<strong>未注册</strong>的域名，单击<strong>加入清单</strong>。</p>
+<figure data-type="image" tabindex="3"><img src="https://pic3.zhimg.com/80/v2-53e047e88923719966219fce0ada9652_720w.webp" alt="" loading="lazy"></figure>
+<p>4. 在<strong>域名清单</strong>中确认已添加的域名，单击<strong>去结算</strong>。</p>
+<p>5. 在<strong>确认订单</strong>页，选择域名的<strong>购买年限</strong>和<strong>持有者类型</strong>。</p>
+<figure data-type="image" tabindex="4"><img src="https://pica.zhimg.com/80/v2-574c31b698246cd4435852ad8c536940_720w.webp" alt="" loading="lazy"></figure>
+<p>6. 在购买途中可能需要选择<strong>域名信息模板。</strong></p>
+<ul>
+<li>
+<p>如果您的域名持有者信息模板已创建完成，您可以选择一个域名信息模板。</p>
+</li>
+<li>
+<p>如果您未提前创建好域名持有者信息模板，您可以单击创建新的信息模板，并如实填写域名持有者信息，并且进行认证。完成后回到本页面，选择您创建的信息模板。</p>
+</li>
+</ul>
+<blockquote>
+<p>注意：域名注册必须使用已完成实名认证的信息模板；未实名认证域名不能续费、将被暂停解析。</p>
+</blockquote>
+<p>7. （可选）许多提供商针对不同的域名后缀，会不定期提供一些优惠服务，例如优惠口令等。您可根据界面显示的内容选择是否使用优惠服务。</p>
+<p>8. 确认服务条款后，勾选我已阅读，理解并接受《域名在线服务条款》，单击立即购买。</p>
+<p>9. 选择支付方式后，单击立即支付。</p>
+<blockquote>
+<p>说明：域名注册须即时报送注册局系统，只有最终完成付款才会向注册局发送指令，下单后请尽快结算。付款方式有多种，如账号余额、支付宝、网银等，您可根据实际情况自行选择。</p>
+</blockquote>
+<p>10.完成支付后，域名注册订单会短暂的为“处理中”状态，待订单状态变为“成功”，域名即注册成功。</p>
+<p>11. 域名注册成功后还需要提交与域名注册信息相同的资料进行实名认证审核，部分特殊域名（例如.cn）还需进行资质审核。通过审核后域名才能正常使用。</p>
+<h2 id="22选择托管平台">2.2选择托管平台</h2>
+<p>搭建网站正常需要购买服务器等相关资源，但为方便，我们可以选择托管网站。托管网站会提供服务器和其他资源，我们这边以<a href="gridea.dev">Gridea</a>为例子说明。除此之外，也有许多其他的托管平台可以进行选择，例如谷歌的Blogger，按需选择即可。</p>
+<h2 id="23托管平台的初始化调整">2.3托管平台的“初始化调整”</h2>
+<p>由于不同的托管网站会提供不同形式的后台，但基本上能够调整的内容都差不多，例如网站的头像，名称板块。根据，不同托管网站的说明使用即可调整。</p>
+<p>以<a href="gridea.dev">Gridea</a>为例，它的后台可以分为一下部分，下面我们就来了解下。</p>
+<figure data-type="image" tabindex="5"><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/RLy-K7sU7.png" alt="" loading="lazy"></figure>
+<p>1.多网站调整：选择进行操作的不同网站，<a href="gridea.dev">Gridea</a>支持一个账户创建互相独立的3个网站，我们可以分别对调整控制。</p>
+<p>2.侧边栏：功能选择</p>
+<ul>
+<li>
+<p>帖子：所有的帖子都会集中到页面“帖子列表”中，你可使用下方“设计”这一侧边栏将这一元素放至于网站。无需多次同步，帖子将会自动更新至你的网站。</p>
+</li>
+<li>
+<p>页面：页面是独立的。不会出现在“帖子列表”中。帖子是会出现在列表中的。（你可以把它作为“关于”页，以此介绍自己）</p>
+</li>
+<li>
+<p>标签：你可以将帖子进行分类，打上不同的标签。</p>
+</li>
+<li>
+<p>设计：使用该功能可以定制你的网页主页以及帖子字体等，是一个不错的自定义工具。</p>
+</li>
+<li>
+<p>设置：在该侧边栏中可以更改你网站的名称，头像，域名，网站导航（它会固定显示在你网站的顶部）或者更多高级功能。</p>
+</li>
+<li>
+<p>访问统计：统计你的读者。所在位置使用的设备以及数量。</p>
+</li>
+</ul>
+<p>3.新帖子：点击此处可以新建一个帖子（有点像新建一个word，但是它是使用markdown进行编辑的）</p>
+<blockquote>
+<p>Tips： Markdown是一个标记语言。你可以通过 <a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法 | Markdown 官方教程</a> 进行学习，它会提高你编写的速度。</p>
+</blockquote>
+<p>4.顶部栏：<a href="gridea.dev">Gridea</a>还提供了许多其他的功能，你可以慢慢进行探索，让它成为你知识库搭建的一部分。</p>
+<p>5.个人：在这里，你可以查看你的个人信息以及付费情况等相关资料。</p>
+<h2 id="24dns解析">2.4DNS解析</h2>
+<blockquote>
+<p>Tips：域名与DNS解析内容见 <a href="https://kgthe.top/technology-yuming">信息技术-域名与DNS解析</a></p>
+</blockquote>
+<p>看到这里，你或许会疑惑：“诶，我的域名到底有什么用呢？”别急，让我们把域名“绑”在你的页面上。这时我们就需要进行DNS解析。</p>
+<p>我们还是以<a href="gridea.dev">Gridea</a>为例，我们可以在设置中看到“托管设置”这一部分。</p>
+<p><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/ainhkZ-GG.png" alt="" loading="lazy">接下来请打开您的域名控制面板。选择“DNS解析记录”，添加一条记录，根据托管设置中的内容**（不同托管平台所填写的内容不同，请一定注意）**进行填写记录，完成后点击“保存”</p>
+<p><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/Jxlk-cpKI.png" alt="" loading="lazy">最后一步！回到<a href="gridea.dev">Gridea</a>设置，将你所购买的域名栏填写到“托管设置”（“域名”下方的填写栏），“魔法”大功告成！</p>
+<blockquote>
+<p>提示：不同的托管平台可能方式不同，但是原理都差不多，你可以根据您的托管平台进行调整。</p>
+</blockquote>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kegongteng.top/cmd/" class="post-title gt-a-link">
+                    CMD命令锦集
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'KAL00WLw3y25n9K0PMQy0fSs-gzGzoHsz',
+		appKey: 'yGr52WfBhUFrO4kc6KM40YQ6',
+		avatar: '',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: '发表一个友好的言论吧',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Blogger / Technophile / Student</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://kegongteng.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

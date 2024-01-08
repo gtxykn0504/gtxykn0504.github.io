@@ -1,0 +1,341 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>MarkDowm的快速上手指南 | Kegongteng</title>
+
+<link rel="shortcut icon" href="https://kegongteng.top/favicon.ico?v=1704713834413">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kegongteng.top/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Kegongteng
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="https://kgthe.top/" class="menu gt-a-link">
+                    知识库
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/archives" class="menu gt-a-link">
+                    文章
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/tags" class="menu gt-a-link">
+                    专栏
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://space.bilibili.com/433513379" class="menu gt-a-link">
+                    Bilibili
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/friends" class="menu gt-a-link">
+                    朋友
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/web" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1704713834413"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    MarkDowm的快速上手指南
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-04-22 ·
+                    </time>
+                    
+                        <a href="https://kegongteng.top/2wWvVJ6Nq/" class="post-tags">
+                            # 其他
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="1标题使用方法"><strong>1.标题使用方法</strong></h2>
+<h2 id="一级标题前加"><strong>一级标题前加#</strong></h2>
+<h2 id="二级标题前加"><strong>二级标题前加##</strong></h2>
+<h3 id="三级标题用前加"><strong>三级标题用前加###</strong></h3>
+<h3 id="四级标题前加"><strong>四级标题前加####</strong></h3>
+<h3 id="五级标题前加"><strong>五级标题前加#####</strong></h3>
+<h2 id="2删除线使用方法"><strong>2.删除线使用方法</strong></h2>
+<p>删除线：文字左右两边各加两个~~</p>
+<pre><code class="language-text">例：~~删除线~~
+
+</code></pre>
+<h2 id="3斜体"><strong>3.斜体</strong></h2>
+<p>_斜体_：文字左右两边各加*</p>
+<pre><code class="language-text">例：*斜体*
+
+</code></pre>
+<h2 id="4加粗"><strong>4.加粗</strong></h2>
+<p><strong>加粗</strong>：文字两边各加**</p>
+<pre><code class="language-text">例：**加粗*
+
+</code></pre>
+<h2 id="5斜体加粗"><strong>5.斜体+加粗</strong></h2>
+<p>**<em>斜体+加粗</em>**：文字两边各加***</p>
+<pre><code class="language-text">例：***斜体+加粗***
+
+</code></pre>
+<h2 id="6下划线"><strong>6.下划线</strong></h2>
+<p>下划线</p>
+<pre><code class="language-text">例：&lt;u&gt;下划线&lt;/u&gt;
+
+</code></pre>
+<h2 id="7高亮需勾选扩展语法"><strong>7.高亮（需勾选扩展语法）</strong></h2>
+<p>高亮：文字两边各加==</p>
+<pre><code class="language-text">例：==高亮==
+
+</code></pre>
+<h2 id="8下标需勾选扩展语法"><strong>8.下标（需勾选扩展语法）</strong></h2>
+<p>H2O：在下标左右加~</p>
+<pre><code class="language-text">例：H~2~O
+
+</code></pre>
+<h2 id="9上标需勾选扩展语法"><strong>9.上标（需勾选扩展语法）</strong></h2>
+<p>X2:在上标左右加^</p>
+<pre><code class="language-text">例：X^2^
+
+</code></pre>
+<h2 id="10引用"><strong>10.引用</strong></h2>
+<blockquote>
+<p>引用：在引用的内容前加&gt;</p>
+</blockquote>
+<pre><code class="language-text">例：&gt;引用
+
+</code></pre>
+<blockquote>
+<p>嵌套引用：在嵌套引用的内容前加&gt;&gt;</p>
+</blockquote>
+<pre><code class="language-text">例：&gt;&gt;嵌套引用
+
+</code></pre>
+<h2 id="11列表"><strong>11.列表</strong></h2>
+<h3 id="1无序列表"><strong>(1)无序列表</strong></h3>
+<ul>
+<li>
+<p>可以用 （一个''*''加一个''空格''） 标记</p>
+</li>
+<li>
+<p>也可以用 （一个''+''加一个''空格''） 标记</p>
+</li>
+<li>
+<p>还可以用（一个''-''加一个''空格''） 标记</p>
+</li>
+</ul>
+<h3 id="2有序列表"><strong>(2)有序列表</strong></h3>
+<ol>
+<li>
+<p>''数字''加一个 “.” 加一个''空格''</p>
+</li>
+<li>
+<p>''数字''加一个 “.” 加一个''空格''</p>
+</li>
+</ol>
+<h2 id="12代码"><strong>12.代码</strong></h2>
+<h3 id="1代码块"><strong>(1)代码块</strong></h3>
+<pre><code class="language-text">```语言名称
+
+</code></pre>
+<p>例：</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+ int main()
+ {
+     cout&lt;&lt;&quot;Hello World !&quot;&lt;&lt;endl;
+     system(&quot;pause);
+     return 0;
+ }
+
+</code></pre>
+<h3 id="2行内代码"><strong>(2)行内代码</strong></h3>
+<p><code>markdowm</code>:代码行左右两边加一个&quot;`&quot;</p>
+<pre><code class="language-text">例：`markdowm`
+
+</code></pre>
+<h2 id="13分割线"><strong>13.分割线</strong></h2>
+<hr>
+<p>上面这是分隔线：</p>
+<p>“***” 加 “一个空格” 或 “---” 加 “一个空格”</p>
+<h2 id="14跳转"><strong>14.跳转</strong></h2>
+<h3 id="1外部跳转超链接"><strong>（1）外部跳转—超链接</strong></h3>
+<p><a href="https://link.zhihu.com/?target=https%3A//home.cnblogs.com/blog/">博客园</a>（按住‘’Ctrl“点击才能跳转到相应网址）</p>
+<pre><code class="language-text">例：[提示文字](网址地址)
+   [博客园](https://home.cnblogs.com/blog/)
+
+</code></pre>
+<h3 id="2内部跳转文本内部跳转"><strong>（2）内部跳转—文本内部跳转</strong></h3>
+<p><a href="https://zhuanlan.zhihu.com/write#10.%E5%BC%95%E7%94%A8">跳转到10.引用</a>（按住‘’Ctrl“点击才能跳转到相应内容）</p>
+<pre><code class="language-text">例：[提示内容](#想要跳转到本文本内的内容)
+
+</code></pre>
+<h3 id="3自动链接"><strong>（3）自动链接</strong></h3>
+<p><a href="https://home.cnblogs.com/blog/">https://home.cnblogs.com/blog/</a></p>
+<pre><code class="language-text">例：&lt;https://home.cnblogs.com/blog/&gt;
+   &lt;这里面的内容会自动变成超链接&gt;
+
+</code></pre>
+<h2 id="15图片"><strong>15.图片</strong></h2>
+<h3 id="1网图"><strong>（1）网图</strong></h3>
+<pre><code class="language-text">例：![自定义你图片名字](图片地址)
+
+</code></pre>
+<h3 id="2本地图片"><strong>（2）本地图片</strong></h3>
+<p>在同一个文件夹里（更简单的方法：直接拷贝）</p>
+<pre><code class="language-text">例：![自定义图片名字](文件名)
+
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'KAL00WLw3y25n9K0PMQy0fSs-gzGzoHsz',
+		appKey: 'yGr52WfBhUFrO4kc6KM40YQ6',
+		avatar: '',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: '发表一个友好的言论吧',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Blogger / Technophile / Student</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://kegongteng.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

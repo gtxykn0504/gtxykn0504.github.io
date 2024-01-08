@@ -1,0 +1,254 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Listary的安装与简易使用 | Kegongteng</title>
+
+<link rel="shortcut icon" href="https://kegongteng.top/favicon.ico?v=1704713834413">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kegongteng.top/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Kegongteng
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="https://kgthe.top/" class="menu gt-a-link">
+                    知识库
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/archives" class="menu gt-a-link">
+                    文章
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/tags" class="menu gt-a-link">
+                    专栏
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://space.bilibili.com/433513379" class="menu gt-a-link">
+                    Bilibili
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/friends" class="menu gt-a-link">
+                    朋友
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/web" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1704713834413"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Listary的安装与简易使用
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-11-18 ·
+                    </time>
+                    
+                        <a href="https://kegongteng.top/2wWvVJ6Nq/" class="post-tags">
+                            # 其他
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <blockquote>
+<p>知识库图片版链接：https://kgthe.top/technology-3</p>
+</blockquote>
+<h1 id="一安装">一.安装</h1>
+<p>1.下载安装包：打开Listary 官网，下载安装包（点击“”Download Listary FREE”，该版本是免费版）。<br>
+2.打开安装包，点击确定协议。（即第二项）<br>
+<img src="https://kegongteng.top/post-images/1700380279604.png" alt="" loading="lazy"><br>
+3.选择安装模式<br>
+<img src="https://kegongteng.top/post-images/1700380287047.png" alt="" loading="lazy"><br>
+4.安装模式<br>
+（1）推荐（标准）安装模式（第一个）：确定后，将Listary安装在C盘中<br>
+（2）自定义安装模式（第二个）：自定义安装目录。这里建议选择自定义安装模式，防止C盘过满。<br>
+<img src="https://kegongteng.top/post-images/1700282927329.png" alt="" loading="lazy"><br>
+5.推荐（标准）安装模式：选项第一个选项后，等待进度条完成后，即可使用。<br>
+<img src="https://kegongteng.top/post-images/1700380312222.png" alt="" loading="lazy"><br>
+6.自定义安装模式：<br>
+6.1选择第二个选项后，根据自己的需要安装（软件安装路径等等）6.2根据自己的需要选择是否要在桌面创建Listary的快捷方式（第一项）或者在任务栏创建Listary的快捷方式（第二项）<br>
+<img src="https://kegongteng.top/post-images/1700380322422.png" alt="" loading="lazy"><br>
+6.2根据自己的需要选择是否要在桌面创建Listary的快捷方式（第一项）或者在任务栏创建Listary的快捷方式（第二项）<br>
+<img src="https://kegongteng.top/post-images/1700380337109.png" alt="" loading="lazy"><br>
+6.3确定安装路径后，点击【继续】<br>
+6.4等待进度条完成后，即可使用。</p>
+<h1 id="二简易使用">二.简易使用</h1>
+<p>在本教程，我们将描述一下使用方法：关键词搜索，直接搜索，在Listary中对文件进行更改，在文件资源管理器中搜索</p>
+<h2 id="1直接搜索">1.直接搜索</h2>
+<p>双击【Ctrl】，出现搜索框，即可搜索本地文件。点击搜索结果打开文件/软件<br>
+<img src="https://kegongteng.top/post-images/1700380401705.png" alt="" loading="lazy"></p>
+<h2 id="2关键词搜索">2.关键词搜索</h2>
+<p>2.1右击任务栏中Listary的图标，点击【选项】，打开Listary的设置。<br>
+<img src="https://kegongteng.top/post-images/1700380406835.png" alt="" loading="lazy"><br>
+2.2接下来依次点击【特性---文件搜索---{+}号添加关键词（{-}号可以删减已经添加的关键词）】，接下来输入关键词与文件夹路径。<br>
+<img src="https://kegongteng.top/post-images/1700380416726.png" alt="" loading="lazy"><br>
+<img src="https://kegongteng.top/post-images/1700282954558.png" alt="" loading="lazy"><br>
+2.3设置好了之后，双击【Ctrl】，输入关键词（即序号1），即可看到名称（即序号2）。点击后，打开文件夹（即序号3所代表的文件夹）。</p>
+<h2 id="3在listary中对文件进行更改">3.在Listary中对文件进行更改</h2>
+<p>双击【Ctrl】，搜索需要更改的文件，右击搜索结果。即可更改文件的名字，复制等操作<br>
+<img src="https://kegongteng.top/post-images/1700380425905.png" alt="" loading="lazy"></p>
+<h2 id="4在文件资源管理器中搜索">4.在文件资源管理器中搜索</h2>
+<p>下载与另存为时，可以在文件资源管理器中搜索并打开文件夹。在下方搜索栏中直接搜索即可。<br>
+<img src="https://kegongteng.top/post-images/1700380429367.png" alt="" loading="lazy"></p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kegongteng.top/pr-zimu/" class="post-title gt-a-link">
+                    PR字幕教程
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'KAL00WLw3y25n9K0PMQy0fSs-gzGzoHsz',
+		appKey: 'yGr52WfBhUFrO4kc6KM40YQ6',
+		avatar: '',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: '发表一个友好的言论吧',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Blogger / Technophile / Student</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://kegongteng.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

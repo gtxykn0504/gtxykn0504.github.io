@@ -1,0 +1,259 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Flash教程1 逐帧动画 | Kegongteng</title>
+
+<link rel="shortcut icon" href="https://kegongteng.top/favicon.ico?v=1704713834413">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kegongteng.top/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Kegongteng
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="https://kgthe.top/" class="menu gt-a-link">
+                    知识库
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/archives" class="menu gt-a-link">
+                    文章
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/tags" class="menu gt-a-link">
+                    专栏
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://space.bilibili.com/433513379" class="menu gt-a-link">
+                    Bilibili
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/friends" class="menu gt-a-link">
+                    朋友
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="https://kegongteng.top/web" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1704713834413"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Flash教程1 逐帧动画
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-11-18 ·
+                    </time>
+                    
+                        <a href="https://kegongteng.top/b_UF_yT6B/" class="post-tags">
+                            # flash
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <blockquote>
+<p>知识库图片版链接：https://kgthe.top/technology-flash1</p>
+</blockquote>
+<h1 id="11图片动画">1.1“图片动画”</h1>
+<ol>
+<li>
+<p>将图片拖入到右侧的【库】中（如果没有库的，在上方【窗口】中寻找）<br>
+<img src="https://kegongteng.top/post-images/1700379586021.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>点击第一帧（即上方【时间轴】中的第一个小方格），将第一帧的图片拖入到画布中。<br>
+<img src="https://kegongteng.top/post-images/1700379591926.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>点击第二帧，右击选择【插入关键帧】<br>
+<img src="https://kegongteng.top/post-images/1700379595345.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>点击第二帧（即上方【时间轴】中的第二个小方格，其他帧以此类推），将第二帧的图片拖入到画布中。<br>
+<img src="https://kegongteng.top/post-images/1700379603308.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>重复以上操作，直到所有图片全部插入完成（除第一帧之外，其他帧都需要右击选择【插入关键帧】）</p>
+</li>
+<li>
+<p>接下来，我们要将插入的图片对齐。点击【窗口】，点击【对齐】（下方图片中没有显示【对齐】）<br>
+<img src="https://kegongteng.top/post-images/1700379609447.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>点击第一帧中的图片，根据自己要求选择不同的对齐方式<br>
+<img src="https://kegongteng.top/post-images/1700379613192.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>重复以上操作，将所有图片都到对齐。接下来点击【控制】中的【测试影片】看看有没有其他问题。<br>
+<img src="https://kegongteng.top/post-images/1700379641248.png" alt="" loading="lazy"></p>
+</li>
+</ol>
+<h1 id="12文字动画">1.2文字动画</h1>
+<ol>
+<li>点击左边的工具栏中的【A】（文字工具），再在画布中点击出现文字框，输入文字。<br>
+下方【属性】中可以更改文字的颜色，大小等内容。<br>
+<img src="https://kegongteng.top/post-images/1700379651608.png" alt="" loading="lazy"></li>
+<li>按照以上方法添加文字，添加图形等制作方法也类似，可模仿制作</li>
+</ol>
+<p>注意：除第一帧之外，其他帧都需要右击选择【插入关键帧】，再添加文字!</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kegongteng.top/da-2/" class="post-title gt-a-link">
+                    达芬奇-进阶字幕添加
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'KAL00WLw3y25n9K0PMQy0fSs-gzGzoHsz',
+		appKey: 'yGr52WfBhUFrO4kc6KM40YQ6',
+		avatar: '',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: '发表一个友好的言论吧',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Blogger / Technophile / Student</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://kegongteng.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
