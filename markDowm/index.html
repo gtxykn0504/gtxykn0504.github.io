@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3HNHcPQryX02hZpy",ck:"3HNHcPQryX02hZpy"})</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>MarkDowm的快速上手指南 -
+    Kegongteng 信息技术札记</title>
+<meta name="ThemeName" content="Gridea Theme Rocky by EryouHao" />
+<meta name="referrer" content="always" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<link rel="manifest" href="/site.webmanifest">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet preload" as="style"> -->
+<link href="/media/css/remixicon.css" rel="stylesheet" as="font">
+<link rel="stylesheet" href="/media/css/tailwind.css">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="MarkDowm的快速上手指南 -
+    Kegongteng 信息技术札记 - Atom Feed" href="/atom.xml">
+  
+
+    
+  <!-- <title name="MarkDowm的快速上手指南"> </title> -->
+  <meta name="socialText" content="Blogger / Technophile / Student" />
+  <meta name="description" content="1.标题使用方法
+一级标题前加#
+二级标题前加##
+三级标题用前加###
+四级标题前加####
+五级标题前加#####
+2.删除线使用方法
+删除线：文字左右两边各加两个~~
+例：~~删除线~~
+
+
+3.斜体
+_斜体_：文字左右两边各加*
+例..." />
+  <meta name="referrer" content="always" />
+  <link rel="canonical" href="https://tech.kegongteng.cn/markDowm/" />
+  <link rel="preconnect" href="https://cdn.staticfile.org" />
+  <!-- Code Highlight -->
+  
+  <script src="https://tech.kegongteng.cn/media/prism.js"></script>
+  <script>
+    Prism.highlightAll();
+  </script>
+  
+  
+  <link rel="stylesheet preload"
+    href="https://tech.kegongteng.cn/media/css/prism-atom-dark.css"
+    as="style" />
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-circle-fill" v-show="showMenu"></i>
+      <i class="ri-menu-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="https://tech.kegongteng.cn" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        主页
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        文章
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        专栏
+      </a>
+    
+      <a href="/friends" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        朋友
+      </a>
+    
+      <a href="https://zheary.com" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+   <!--<a href="https://tech.kegongteng.cn/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>-->
+  </nav>
+</div>
+    <a href="https://tech.kegongteng.cn"
+      class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Kegongteng 信息技术札记
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div
+        class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-32 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          MarkDowm的快速上手指南
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">
+            2023-04-22 · 3 min read
+          </div>
+          
+          <a href="https://tech.kegongteng.cn/tag/2wWvVJ6Nq/"
+            class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+            <i class="ri-hashtag"></i>
+            其他
+          </a>
+          
+        </div>
+        <div class="markdown mb-16" v-pre>
+          <h2 id="1标题使用方法"><strong>1.标题使用方法</strong></h2>
+<h2 id="一级标题前加"><strong>一级标题前加#</strong></h2>
+<h2 id="二级标题前加"><strong>二级标题前加##</strong></h2>
+<h3 id="三级标题用前加"><strong>三级标题用前加###</strong></h3>
+<h3 id="四级标题前加"><strong>四级标题前加####</strong></h3>
+<h3 id="五级标题前加"><strong>五级标题前加#####</strong></h3>
+<h2 id="2删除线使用方法"><strong>2.删除线使用方法</strong></h2>
+<p>删除线：文字左右两边各加两个~~</p>
+<pre><code class="language-text">例：~~删除线~~
+
+</code></pre>
+<h2 id="3斜体"><strong>3.斜体</strong></h2>
+<p>_斜体_：文字左右两边各加*</p>
+<pre><code class="language-text">例：*斜体*
+
+</code></pre>
+<h2 id="4加粗"><strong>4.加粗</strong></h2>
+<p><strong>加粗</strong>：文字两边各加**</p>
+<pre><code class="language-text">例：**加粗*
+
+</code></pre>
+<h2 id="5斜体加粗"><strong>5.斜体+加粗</strong></h2>
+<p>**<em>斜体+加粗</em>**：文字两边各加***</p>
+<pre><code class="language-text">例：***斜体+加粗***
+
+</code></pre>
+<h2 id="6下划线"><strong>6.下划线</strong></h2>
+<p>下划线</p>
+<pre><code class="language-text">例：&lt;u&gt;下划线&lt;/u&gt;
+
+</code></pre>
+<h2 id="7高亮需勾选扩展语法"><strong>7.高亮（需勾选扩展语法）</strong></h2>
+<p>高亮：文字两边各加==</p>
+<pre><code class="language-text">例：==高亮==
+
+</code></pre>
+<h2 id="8下标需勾选扩展语法"><strong>8.下标（需勾选扩展语法）</strong></h2>
+<p>H2O：在下标左右加~</p>
+<pre><code class="language-text">例：H~2~O
+
+</code></pre>
+<h2 id="9上标需勾选扩展语法"><strong>9.上标（需勾选扩展语法）</strong></h2>
+<p>X2:在上标左右加^</p>
+<pre><code class="language-text">例：X^2^
+
+</code></pre>
+<h2 id="10引用"><strong>10.引用</strong></h2>
+<blockquote>
+<p>引用：在引用的内容前加&gt;</p>
+</blockquote>
+<pre><code class="language-text">例：&gt;引用
+
+</code></pre>
+<blockquote>
+<p>嵌套引用：在嵌套引用的内容前加&gt;&gt;</p>
+</blockquote>
+<pre><code class="language-text">例：&gt;&gt;嵌套引用
+
+</code></pre>
+<h2 id="11列表"><strong>11.列表</strong></h2>
+<h3 id="1无序列表"><strong>(1)无序列表</strong></h3>
+<ul>
+<li>
+<p>可以用 （一个''*''加一个''空格''） 标记</p>
+</li>
+<li>
+<p>也可以用 （一个''+''加一个''空格''） 标记</p>
+</li>
+<li>
+<p>还可以用（一个''-''加一个''空格''） 标记</p>
+</li>
+</ul>
+<h3 id="2有序列表"><strong>(2)有序列表</strong></h3>
+<ol>
+<li>
+<p>''数字''加一个 “.” 加一个''空格''</p>
+</li>
+<li>
+<p>''数字''加一个 “.” 加一个''空格''</p>
+</li>
+</ol>
+<h2 id="12代码"><strong>12.代码</strong></h2>
+<h3 id="1代码块"><strong>(1)代码块</strong></h3>
+<pre><code class="language-text">```语言名称
+
+</code></pre>
+<p>例：</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+ int main()
+ {
+     cout&lt;&lt;&quot;Hello World !&quot;&lt;&lt;endl;
+     system(&quot;pause);
+     return 0;
+ }
+
+</code></pre>
+<h3 id="2行内代码"><strong>(2)行内代码</strong></h3>
+<p><code>markdowm</code>:代码行左右两边加一个&quot;`&quot;</p>
+<pre><code class="language-text">例：`markdowm`
+
+</code></pre>
+<h2 id="13分割线"><strong>13.分割线</strong></h2>
+<hr>
+<p>上面这是分隔线：</p>
+<p>“***” 加 “一个空格” 或 “---” 加 “一个空格”</p>
+<h2 id="14跳转"><strong>14.跳转</strong></h2>
+<h3 id="1外部跳转超链接"><strong>（1）外部跳转—超链接</strong></h3>
+<p><a href="https://link.zhihu.com/?target=https%3A//home.cnblogs.com/blog/">博客园</a>（按住‘’Ctrl“点击才能跳转到相应网址）</p>
+<pre><code class="language-text">例：[提示文字](网址地址)
+   [博客园](https://home.cnblogs.com/blog/)
+
+</code></pre>
+<h3 id="2内部跳转文本内部跳转"><strong>（2）内部跳转—文本内部跳转</strong></h3>
+<p><a href="https://zhuanlan.zhihu.com/write#10.%E5%BC%95%E7%94%A8">跳转到10.引用</a>（按住‘’Ctrl“点击才能跳转到相应内容）</p>
+<pre><code class="language-text">例：[提示内容](#想要跳转到本文本内的内容)
+
+</code></pre>
+<h3 id="3自动链接"><strong>（3）自动链接</strong></h3>
+<p><a href="https://home.cnblogs.com/blog/">https://home.cnblogs.com/blog/</a></p>
+<pre><code class="language-text">例：&lt;https://home.cnblogs.com/blog/&gt;
+   &lt;这里面的内容会自动变成超链接&gt;
+
+</code></pre>
+<h2 id="15图片"><strong>15.图片</strong></h2>
+<h3 id="1网图"><strong>（1）网图</strong></h3>
+<pre><code class="language-text">例：![自定义你图片名字](图片地址)
+
+</code></pre>
+<h3 id="2本地图片"><strong>（2）本地图片</strong></h3>
+<p>在同一个文件夹里（更简单的方法：直接拷贝）</p>
+<pre><code class="language-text">例：![自定义图片名字](文件名)
+
+</code></pre>
+
+        </div>
+
+        <!-- copyright -->
+        <div class="copyright">
+          <div class="container">
+            <p><small class="text-gray-400">
+                版权声明：此站点所有文章除特别声明外，均采用CC BY-NC-ND 4.0协议进行版权保护，您不得修改本文章任何部分，且转载需注明出处
+             </small></p>
+          </div>
+        </div>
+
+        <div class="text-center text-gray-300">
+          
+        </div>
+      </div>
+
+      
+
+      
+        <button type="button" class="collapsible">
+          <i class="ri-message-2-line"></i>
+        </button>
+        <div class="tcomment rounded-lg px-4 py-4">
+          <div id="tcomment"></div>
+        </div>  
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+
+    </div>
+
+
+    <!-- TOC Container -->
+    <div id="toc"
+      class="fixed right-0 bottom-0 mb-20 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight"
+      @click="showToc = true">
+      <i class="ri-menu-line font-bold"></i>
+    </div>
+
+    <div
+      class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 rounded-lg p-4 m-4  shadow-md bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast"
+      :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div
+          class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast"
+          @click="showToc = false">
+          <i class="ri-close-circle-fill"></i>
+        </div>
+      </div>
+      <div class="post-toc-container"><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1%E6%A0%87%E9%A2%98%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><strong>1.标题使用方法</strong></a></li>
+<li><a href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98%E5%89%8D%E5%8A%A0"><strong>一级标题前加#</strong></a></li>
+<li><a href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98%E5%89%8D%E5%8A%A0"><strong>二级标题前加##</strong></a>
+<ul>
+<li><a href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98%E7%94%A8%E5%89%8D%E5%8A%A0"><strong>三级标题用前加###</strong></a></li>
+<li><a href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98%E5%89%8D%E5%8A%A0"><strong>四级标题前加####</strong></a></li>
+<li><a href="#%E4%BA%94%E7%BA%A7%E6%A0%87%E9%A2%98%E5%89%8D%E5%8A%A0"><strong>五级标题前加#####</strong></a></li>
+</ul>
+</li>
+<li><a href="#2%E5%88%A0%E9%99%A4%E7%BA%BF%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><strong>2.删除线使用方法</strong></a></li>
+<li><a href="#3%E6%96%9C%E4%BD%93"><strong>3.斜体</strong></a></li>
+<li><a href="#4%E5%8A%A0%E7%B2%97"><strong>4.加粗</strong></a></li>
+<li><a href="#5%E6%96%9C%E4%BD%93%E5%8A%A0%E7%B2%97"><strong>5.斜体+加粗</strong></a></li>
+<li><a href="#6%E4%B8%8B%E5%88%92%E7%BA%BF"><strong>6.下划线</strong></a></li>
+<li><a href="#7%E9%AB%98%E4%BA%AE%E9%9C%80%E5%8B%BE%E9%80%89%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95"><strong>7.高亮（需勾选扩展语法）</strong></a></li>
+<li><a href="#8%E4%B8%8B%E6%A0%87%E9%9C%80%E5%8B%BE%E9%80%89%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95"><strong>8.下标（需勾选扩展语法）</strong></a></li>
+<li><a href="#9%E4%B8%8A%E6%A0%87%E9%9C%80%E5%8B%BE%E9%80%89%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95"><strong>9.上标（需勾选扩展语法）</strong></a></li>
+<li><a href="#10%E5%BC%95%E7%94%A8"><strong>10.引用</strong></a></li>
+<li><a href="#11%E5%88%97%E8%A1%A8"><strong>11.列表</strong></a>
+<ul>
+<li><a href="#1%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><strong>(1)无序列表</strong></a></li>
+<li><a href="#2%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><strong>(2)有序列表</strong></a></li>
+</ul>
+</li>
+<li><a href="#12%E4%BB%A3%E7%A0%81"><strong>12.代码</strong></a>
+<ul>
+<li><a href="#1%E4%BB%A3%E7%A0%81%E5%9D%97"><strong>(1)代码块</strong></a></li>
+<li><a href="#2%E8%A1%8C%E5%86%85%E4%BB%A3%E7%A0%81"><strong>(2)行内代码</strong></a></li>
+</ul>
+</li>
+<li><a href="#13%E5%88%86%E5%89%B2%E7%BA%BF"><strong>13.分割线</strong></a></li>
+<li><a href="#14%E8%B7%B3%E8%BD%AC"><strong>14.跳转</strong></a>
+<ul>
+<li><a href="#1%E5%A4%96%E9%83%A8%E8%B7%B3%E8%BD%AC%E8%B6%85%E9%93%BE%E6%8E%A5"><strong>（1）外部跳转—超链接</strong></a></li>
+<li><a href="#2%E5%86%85%E9%83%A8%E8%B7%B3%E8%BD%AC%E6%96%87%E6%9C%AC%E5%86%85%E9%83%A8%E8%B7%B3%E8%BD%AC"><strong>（2）内部跳转—文本内部跳转</strong></a></li>
+<li><a href="#3%E8%87%AA%E5%8A%A8%E9%93%BE%E6%8E%A5"><strong>（3）自动链接</strong></a></li>
+</ul>
+</li>
+<li><a href="#15%E5%9B%BE%E7%89%87"><strong>15.图片</strong></a>
+<ul>
+<li><a href="#1%E7%BD%91%E5%9B%BE"><strong>（1）网图</strong></a></li>
+<li><a href="#2%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87"><strong>（2）本地图片</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+    </div>
+
+    <!-- Back to top -->
+    <div
+      class="fixed right-0 bottom-0 mb-4 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200"
+      @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-circle-fill"></i>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>-->
+  <script src="https://tech.kegongteng.cn/media/scripts/vue.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/main.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/view-image.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/lazyload.min.js"></script>
+
+  <!--根据内容动态加载-->
+  <script type="text/javascript">
+    window.onload = function () {
+      //根据内容动态加载mermiad
+      if (document.getElementsByClassName("language-mermaid").length != 0) {
+        console.log("find mermaid")
+        for (let x of document.getElementsByClassName("language-mermaid")) {
+          if (x.nodeName == "CODE") {
+            let m = document.createElement("div");
+            m.classList.add("mermaid");
+            m.textContent = x.textContent;
+            x.parentNode.insertAdjacentElement("beforebegin", m);
+          }
+        }
+        let script = document.createElement('script');
+        defer = "defer";
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/mermaid.min.js";
+        document.body.append(script);
+        script.onload = function () {
+          mermaid.initialize({
+            startOnLoad: false
+          });
+          mermaid.init();
+          console.log("mermaid init done");
+        }
+      }
+
+      //bilibili 视频支持
+      var content = document.getElementsByClassName("language-bilibili")[0];
+      if (content != null) {
+        var m = document.createElement("div");
+        m.classList.add("bilibili-video");
+        m.innerHTML = content.textContent;
+        content.parentNode.insertAdjacentElement("beforeend", m);
+      }
+      //katex自适应加载
+      if (document.getElementsByClassName("katex").length != 0) {
+        let script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/katex.min.js";
+        document.body.append(script);
+        script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/copy-tex.min.js";
+        document.body.append(script);
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/katex.min.css";
+        document.body.append(link);
+        link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/copy-tex.css";
+        document.body.append(link);
+      }
+
+      script = document.createElement('script');
+      script.defer = "defer"
+      script.src =
+        "https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js";
+      document.body.append(script);
+      script.onload = function () {
+        let scripts = document.createElement('script');
+        scripts.append(document.createTextNode(
+          " twikoo.init({envId: \"https://twikoo24.kegongteng.cn\",el: \"#tcomment\",});"));
+        var parentDiv = document.getElementById("toc").parentNode;
+        var sp = document.getElementById("toc");
+        parentDiv.insertBefore(scripts, sp);
+      }
+    }
+  </script>
+  <script>
+   comment_collapse();
+   function replace_src() {
+    var imgEl = document.getElementsByTagName('img');
+    for (var i=0; i<imgEl.length; i++) {
+        if(imgEl[i].getAttribute('src')) {
+          imgEl[i].setAttribute('data-src',imgEl[i].getAttribute('src'));
+          imgEl[i].removeAttribute('src'); //use only if you need to remove data-src attribute after setting src
+          imgEl[i].removeAttribute('loading'); 
+          imgEl[i].setAttribute('class','lazy');
+        }
+      }
+    }
+    replace_src();
+    window.ViewImage && ViewImage.init('img');
+    var lazyLoadInstance = new LazyLoad({});
+    lazyLoadInstance.update();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3HNHcPQryX02hZpy",ck:"3HNHcPQryX02hZpy"})</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Excel教程第三期-“时间与文本”函数 -
+    Kegongteng 信息技术札记</title>
+<meta name="ThemeName" content="Gridea Theme Rocky by EryouHao" />
+<meta name="referrer" content="always" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<link rel="manifest" href="/site.webmanifest">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet preload" as="style"> -->
+<link href="/media/css/remixicon.css" rel="stylesheet" as="font">
+<link rel="stylesheet" href="/media/css/tailwind.css">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Excel教程第三期-“时间与文本”函数 -
+    Kegongteng 信息技术札记 - Atom Feed" href="/atom.xml">
+  
+
+    
+  <!-- <title name="Excel教程第三期-“时间与文本”函数"> </title> -->
+  <meta name="socialText" content="Blogger / Technophile / Student" />
+  <meta name="description" content="
+
+本期教程由于个人时间原因，并未制作视频版本。为了有一定的效果，您可以下载本期的示范Excel文件，以此来帮助你学习： 文件下载链接
+
+
+一.提取年
+YEAR函数是从日期中提取年
+语法：=YEAR(单元格)
+二.提取月
+MONTH函数是从..." />
+  <meta name="referrer" content="always" />
+  <link rel="canonical" href="https://tech.kegongteng.cn/excel-3/" />
+  <link rel="preconnect" href="https://cdn.staticfile.org" />
+  <!-- Code Highlight -->
+  
+  <script src="https://tech.kegongteng.cn/media/prism.js"></script>
+  <script>
+    Prism.highlightAll();
+  </script>
+  
+  
+  <link rel="stylesheet preload"
+    href="https://tech.kegongteng.cn/media/css/prism-atom-dark.css"
+    as="style" />
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-circle-fill" v-show="showMenu"></i>
+      <i class="ri-menu-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="https://tech.kegongteng.cn" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        主页
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        文章
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        专栏
+      </a>
+    
+      <a href="/friends" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        朋友
+      </a>
+    
+      <a href="https://zheary.com" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+   <!--<a href="https://tech.kegongteng.cn/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>-->
+  </nav>
+</div>
+    <a href="https://tech.kegongteng.cn"
+      class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Kegongteng 信息技术札记
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div
+        class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-32 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Excel教程第三期-“时间与文本”函数
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">
+            2024-02-04 · 3 min read
+          </div>
+          
+          <a href="https://tech.kegongteng.cn/tag/juoV1LmbZ/"
+            class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+            <i class="ri-hashtag"></i>
+            Excel
+          </a>
+          
+        </div>
+        <div class="markdown mb-16" v-pre>
+          <blockquote>
+<blockquote>
+<p>本期教程由于个人时间原因，并未制作视频版本。为了有一定的效果，您可以下载本期的示范Excel文件，以此来帮助你学习： <a href="http://share.kegongteng.cn/kdyhJo">文件下载链接</a></p>
+</blockquote>
+</blockquote>
+<h1 id="一提取年">一.提取年</h1>
+<p>YEAR函数是从日期中提取年<br>
+<code>语法：=YEAR(单元格)</code></p>
+<h1 id="二提取月">二.提取月</h1>
+<p>MONTH函数是从日期中提取月<br>
+<code>语法：=MONTH(单元格)</code></p>
+<h1 id="三提取天">三.提取天</h1>
+<p>DAY函数是从日期中提取日<br>
+<code>语法：=DAY(单元格)</code></p>
+<h1 id="四当前日期">四.当前日期</h1>
+<p>TODAY函数是返回当前日期的函数，<br>
+<code>语法：=today(单元格)，是一个跟随时间变化而变化的函数</code></p>
+<h1 id="五当前时间">五.当前时间</h1>
+<p>NOW函数是返回当前时间的函数。<br>
+<code>固定公式：=now(单元格)</code></p>
+<blockquote>
+<p>注意：每分钟都会变化，按键盘上的F9键可以刷新，一般都是配合其它函数一起使用</p>
+</blockquote>
+<h1 id="六生成日期">六.生成日期</h1>
+<p>DATE函数是指输入指定的参数生成日期<br>
+<code>语法：=date（year,month,day）</code></p>
+<h1 id="七计算日期差">七.计算日期差</h1>
+<p>DATEDIF函数是计算两日期之差，返回两个日期之间的年\月\日间隔数。<br>
+<code>语法：=datedif(start_date,end_date,unit)</code></p>
+<blockquote>
+<p>说明：Start_date 起始日期<br>
+End_date 结束日期<br>
+Unit 为所需信息的返回类型：Y&quot; 时间段中的整年数；&quot;M&quot; 时间段中的整月数；&quot;D&quot; 时间段中的天数；&quot;MD&quot; 起始日期与结束日期的同月间隔天数；&quot;YD&quot; 起始日期与结束日期的同年间隔天数；&quot;YM&quot; 起始日期与结束日期的同年间隔月数。</p>
+</blockquote>
+<h1 id="八日期转星期">八.日期转星期</h1>
+<p>WEEKDAY函数是返回某日期的星期数。<br>
+<code>语法：=weekday(serial_number，return_type)</code></p>
+<blockquote>
+<p>说明：serial_number 指日期<br>
+return_type指返回类型，一般都选择2</p>
+</blockquote>
+<h1 id="九重复显示指定内容">九.重复显示指定内容</h1>
+<p>REPT函数是按照给定的次数重复显示文本的函数。<br>
+<code>语法：=rept(需要重复显示的文本,重复显示的次数)</code></p>
+<h1 id="十计算文本长度">十.计算文本长度</h1>
+<p>LEN函数是计算字符串长度的函数。<br>
+<code>语法：=LEN(单元格)</code></p>
+<h1 id="十一从左提取内容">十一.从左提取内容</h1>
+<p>LEFT函数用于从一个文本字符串的第一个字符开始返回指定个数的字符。<br>
+<code>语法：=left(text,[num_chars])</code></p>
+<blockquote>
+<p>说明：text:文本字符串<br>
+num_chars:从左边第一个字符开始提取的个数</p>
+</blockquote>
+<h1 id="十二从右提取内容">十二.从右提取内容</h1>
+<p>RIGHT函数和LEFT函数用法一样，指的是从右边第一个字符开始提取字符<br>
+<code>语法：=RIGHT(text,[num_chars])</code></p>
+<h1 id="十三从中间提取内容">十三.从中间提取内容</h1>
+<p>MID函数是从一个字符串中截取出指定数量的字符<br>
+<code>语法：=MID(text,start_num,num_chars)</code></p>
+<blockquote>
+<p>注意：text:文本字符串<br>
+start_num：从字符串的第几个开始<br>
+num_chars：提取的字符长度</p>
+</blockquote>
+<h1 id="十四快速合并内容">十四.快速合并内容</h1>
+<p>CONCAT函数用于连接两个或多个内容，比文本连接符号&amp;更高效<br>
+<code>语法：=CONCAT(单元格：单元格)</code></p>
+<h1 id="十五文本连接">十五.文本连接</h1>
+<p>文本连接符&amp;，把几个内容连接起来，可以是数字、单元格引用、字符等<br>
+<code>语法：=单元格&amp;单元格</code></p>
+
+        </div>
+
+        <!-- copyright -->
+        <div class="copyright">
+          <div class="container">
+            <p><small class="text-gray-400">
+                版权声明：此站点所有文章除特别声明外，均采用CC BY-NC-ND 4.0协议进行版权保护，您不得修改本文章任何部分，且转载需注明出处
+             </small></p>
+          </div>
+        </div>
+
+        <div class="text-center text-gray-300">
+          
+        </div>
+      </div>
+
+      
+
+      
+        <button type="button" class="collapsible">
+          <i class="ri-message-2-line"></i>
+        </button>
+        <div class="tcomment rounded-lg px-4 py-4">
+          <div id="tcomment"></div>
+        </div>  
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+
+    </div>
+
+
+    <!-- TOC Container -->
+    <div id="toc"
+      class="fixed right-0 bottom-0 mb-20 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight"
+      @click="showToc = true">
+      <i class="ri-menu-line font-bold"></i>
+    </div>
+
+    <div
+      class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 rounded-lg p-4 m-4  shadow-md bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast"
+      :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div
+          class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast"
+          @click="showToc = false">
+          <i class="ri-close-circle-fill"></i>
+        </div>
+      </div>
+      <div class="post-toc-container"><ul class="markdownIt-TOC">
+<li><a href="#%E4%B8%80%E6%8F%90%E5%8F%96%E5%B9%B4">一.提取年</a></li>
+<li><a href="#%E4%BA%8C%E6%8F%90%E5%8F%96%E6%9C%88">二.提取月</a></li>
+<li><a href="#%E4%B8%89%E6%8F%90%E5%8F%96%E5%A4%A9">三.提取天</a></li>
+<li><a href="#%E5%9B%9B%E5%BD%93%E5%89%8D%E6%97%A5%E6%9C%9F">四.当前日期</a></li>
+<li><a href="#%E4%BA%94%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4">五.当前时间</a></li>
+<li><a href="#%E5%85%AD%E7%94%9F%E6%88%90%E6%97%A5%E6%9C%9F">六.生成日期</a></li>
+<li><a href="#%E4%B8%83%E8%AE%A1%E7%AE%97%E6%97%A5%E6%9C%9F%E5%B7%AE">七.计算日期差</a></li>
+<li><a href="#%E5%85%AB%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%98%9F%E6%9C%9F">八.日期转星期</a></li>
+<li><a href="#%E4%B9%9D%E9%87%8D%E5%A4%8D%E6%98%BE%E7%A4%BA%E6%8C%87%E5%AE%9A%E5%86%85%E5%AE%B9">九.重复显示指定内容</a></li>
+<li><a href="#%E5%8D%81%E8%AE%A1%E7%AE%97%E6%96%87%E6%9C%AC%E9%95%BF%E5%BA%A6">十.计算文本长度</a></li>
+<li><a href="#%E5%8D%81%E4%B8%80%E4%BB%8E%E5%B7%A6%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9">十一.从左提取内容</a></li>
+<li><a href="#%E5%8D%81%E4%BA%8C%E4%BB%8E%E5%8F%B3%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9">十二.从右提取内容</a></li>
+<li><a href="#%E5%8D%81%E4%B8%89%E4%BB%8E%E4%B8%AD%E9%97%B4%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9">十三.从中间提取内容</a></li>
+<li><a href="#%E5%8D%81%E5%9B%9B%E5%BF%AB%E9%80%9F%E5%90%88%E5%B9%B6%E5%86%85%E5%AE%B9">十四.快速合并内容</a></li>
+<li><a href="#%E5%8D%81%E4%BA%94%E6%96%87%E6%9C%AC%E8%BF%9E%E6%8E%A5">十五.文本连接</a></li>
+</ul>
+</div>
+    </div>
+
+    <!-- Back to top -->
+    <div
+      class="fixed right-0 bottom-0 mb-4 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200"
+      @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-circle-fill"></i>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>-->
+  <script src="https://tech.kegongteng.cn/media/scripts/vue.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/main.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/view-image.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/lazyload.min.js"></script>
+
+  <!--根据内容动态加载-->
+  <script type="text/javascript">
+    window.onload = function () {
+      //根据内容动态加载mermiad
+      if (document.getElementsByClassName("language-mermaid").length != 0) {
+        console.log("find mermaid")
+        for (let x of document.getElementsByClassName("language-mermaid")) {
+          if (x.nodeName == "CODE") {
+            let m = document.createElement("div");
+            m.classList.add("mermaid");
+            m.textContent = x.textContent;
+            x.parentNode.insertAdjacentElement("beforebegin", m);
+          }
+        }
+        let script = document.createElement('script');
+        defer = "defer";
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/mermaid.min.js";
+        document.body.append(script);
+        script.onload = function () {
+          mermaid.initialize({
+            startOnLoad: false
+          });
+          mermaid.init();
+          console.log("mermaid init done");
+        }
+      }
+
+      //bilibili 视频支持
+      var content = document.getElementsByClassName("language-bilibili")[0];
+      if (content != null) {
+        var m = document.createElement("div");
+        m.classList.add("bilibili-video");
+        m.innerHTML = content.textContent;
+        content.parentNode.insertAdjacentElement("beforeend", m);
+      }
+      //katex自适应加载
+      if (document.getElementsByClassName("katex").length != 0) {
+        let script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/katex.min.js";
+        document.body.append(script);
+        script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/copy-tex.min.js";
+        document.body.append(script);
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/katex.min.css";
+        document.body.append(link);
+        link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/copy-tex.css";
+        document.body.append(link);
+      }
+
+      script = document.createElement('script');
+      script.defer = "defer"
+      script.src =
+        "https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js";
+      document.body.append(script);
+      script.onload = function () {
+        let scripts = document.createElement('script');
+        scripts.append(document.createTextNode(
+          " twikoo.init({envId: \"https://twikoo24.kegongteng.cn\",el: \"#tcomment\",});"));
+        var parentDiv = document.getElementById("toc").parentNode;
+        var sp = document.getElementById("toc");
+        parentDiv.insertBefore(scripts, sp);
+      }
+    }
+  </script>
+  <script>
+   comment_collapse();
+   function replace_src() {
+    var imgEl = document.getElementsByTagName('img');
+    for (var i=0; i<imgEl.length; i++) {
+        if(imgEl[i].getAttribute('src')) {
+          imgEl[i].setAttribute('data-src',imgEl[i].getAttribute('src'));
+          imgEl[i].removeAttribute('src'); //use only if you need to remove data-src attribute after setting src
+          imgEl[i].removeAttribute('loading'); 
+          imgEl[i].setAttribute('class','lazy');
+        }
+      }
+    }
+    replace_src();
+    window.ViewImage && ViewImage.init('img');
+    var lazyLoadInstance = new LazyLoad({});
+    lazyLoadInstance.update();
+  </script>
+
+</body>
+
+</html>

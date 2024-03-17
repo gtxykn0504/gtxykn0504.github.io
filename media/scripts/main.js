@@ -1,0 +1,64 @@
+
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      scrolled: false,
+      showToc: false,
+      showMenu: false,
+    } 
+  },
+  computed: {
+    text() {
+      return encodeURIComponent(document.title) 
+    },
+    url() {
+      return encodeURIComponent(window.location.href)
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.navOnScroll)
+  },
+  methods: {
+    oepnUrl(url) {
+      window.open(url, '_blank')
+    },
+    navOnScroll() {
+      if (window.scrollY > 20) {
+        this.scrolled = true
+      } else {
+        this.scrolled = false
+      }
+    },
+    backToUp() {
+      window.scrollTo(0, 0)
+    },
+    shareToTwitter() {
+      window.open(`https://twitter.com/share?text=${this.text}&url=${this.url}`, '_blank', 'width=615,height=505')
+    },
+    shareToWeibo() {
+      window.open(`https://service.weibo.com/share/share.php?title=${this.text}&url=${this.url}`, '_blank', 'width=615,height=505')
+    },
+    shareToTelegram() {
+      window.open(`https://telegram.me/share/url?text=${this.text}&url=${this.url}`, '_blank', 'width=615,height=505')
+    },
+  },
+})
+
+
+function comment_collapse() {
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  } 
+}

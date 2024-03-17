@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3HNHcPQryX02hZpy",ck:"3HNHcPQryX02hZpy"})</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>日常 - Kegongteng 信息技术札记</title>
+<meta name="ThemeName" content="Gridea Theme Rocky by EryouHao" />
+<meta name="referrer" content="always" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<link rel="manifest" href="/site.webmanifest">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet preload" as="style"> -->
+<link href="/media/css/remixicon.css" rel="stylesheet" as="font">
+<link rel="stylesheet" href="/media/css/tailwind.css">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="日常 - Kegongteng 信息技术札记 - Atom Feed" href="/atom.xml">
+  
+
+    
+  <meta name="description" content="日常" />
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-circle-fill" v-show="showMenu"></i>
+      <i class="ri-menu-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="https://tech.kegongteng.cn" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        主页
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        文章
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        专栏
+      </a>
+    
+      <a href="/friends" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        朋友
+      </a>
+    
+      <a href="https://zheary.com" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+   <!--<a href="https://tech.kegongteng.cn/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>-->
+  </nav>
+</div>
+    <a href="https://tech.kegongteng.cn"
+      class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Kegongteng 信息技术札记
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div
+        class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-32 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">日常</h1>
+
+        <div id="bber"></div>
+
+      </div>
+    
+      <button type="button" class="collapsible">
+        <i class="ri-message-2-line"></i>
+      </button>
+      <div class="tcomment rounded-lg px-4 py-4">
+        <div id="tcomment"></div>
+      </div>  
+    
+    </div>
+    
+    <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+
+
+    <!-- Back to top -->
+    <div
+      class="fixed right-0 bottom-0 mb-6 mr-4 shadow w-12 h-12 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200"
+      @click="backToUp" v-show="scrolled">
+       <i class="ri-arrow-up-circle-fill"></i>
+    </div>
+  </div>
+
+  <script src="https://tech.kegongteng.cn/media/scripts/vue.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/main.js"></script>
+  <script type="text/javascript">
+    var bbMemos = {
+      memos : '',
+      limit : '',
+      creatorId:'',
+      domId: '',
+      twiEnv:'https://twikoo24.kegongteng.cn',
+    }
+  </script>
+  <script src="https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/marked.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/view-image.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/lately.min.js"></script>
+  <script type="module" src="https://immmmm.com/emaction.js?v=2308071"></script>
+  <script src="https://immmmm.com/bb-lmm-mk.js"></script>
+  <script type="text/javascript">
+    twikoo.init({envId: "https://twikoo24.kegongteng.cn",el: '#tcomment'});
+  </script>
+  <script>
+    comment_collapse();
+  </script>
+</body>
+
+</html>

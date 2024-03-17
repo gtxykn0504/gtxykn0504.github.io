@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://tech.kegongteng.cn</id>
+    <title>Kegongteng 信息技术札记</title>
+    <updated>2024-03-17T06:09:08.605Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://tech.kegongteng.cn"/>
+    <link rel="self" href="https://tech.kegongteng.cn/atom.xml"/>
+    <subtitle>收藏从未停止，实践从未开始</subtitle>
+    <logo>https://tech.kegongteng.cn/images/avatar.png</logo>
+    <icon>https://tech.kegongteng.cn/favicon.ico</icon>
+    <rights>All rights reserved 2024, Kegongteng 信息技术札记</rights>
+    <entry>
+        <title type="html"><![CDATA[C语言-二次函数一般式转顶点式]]></title>
+        <id>https://tech.kegongteng.cn/c-quadratic/</id>
+        <link href="https://tech.kegongteng.cn/c-quadratic/">
+        </link>
+        <updated>2024-02-11T06:57:30.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="一基本二次函数一般式转顶点式">一.基本：二次函数一般式转顶点式</h1>
+<h2 id="11理解二次函数一般式与顶点式">1.1理解二次函数一般式与顶点式</h2>
+<p>首先，我们要清楚二次函数的一般式是 <code>y = ax^2 + bx + c</code>，其中 <code>a</code>, <code>b</code>, <code>c</code> 是常数，并且 <code>a ≠ 0</code>，而顶点式是 <code>y = a(x - h)^2 + k</code>。</p>
+<h2 id="12转化步骤">1.2转化步骤</h2>
+<ol>
+<li><strong>找出a, b, c的值</strong>：<br>
+从给定的二次函数一般式中，我们可以直接读出 <code>a</code>, <code>b</code>, <code>c</code> 的值。</li>
+<li><strong>公式法求h的值</strong>：<br>
+顶点横坐标 <code>x</code> 的值可以通过公式 <code>h = -b / (2a)</code> 计算得出。这个公式是二次函数对称轴的公式，也是顶点横坐标的公式。</li>
+<li><strong>公式法求k的值</strong>：<br>
+通过公式 <code>k=(4ac-b^2) / (4a)</code> 计算得出。这个公式是顶点纵坐标的公式。</li>
+<li><strong>写出顶点式</strong>：<br>
+使用求得的 <code>h</code> 和 <code>k</code> 值，以及原一般式中的 <code>a</code> 值，写出二次函数的顶点式 <code>y = a(x - h)^2 + k</code>。</li>
+</ol>
+<h2 id="13注意事项">1.3注意事项</h2>
+<ul>
+<li>在计算过程中，注意确保分母 <code>2a</code> 不为零，即 <code>a ≠ 0</code>。</li>
+<li>当 <code>b^2 - 4ac</code> 小于零时，二次函数没有实数根，但它仍然有一个顶点。</li>
+<li>在代入和计算时，注意保持数学表达式的准确性，避免计算错误。</li>
+</ul>
+<h2 id="14在c语言中进行计算">1.4在C语言中进行计算</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+	double a, b, c, h, k;
+
+	// 输入二次函数的一般式系数
+	printf(&quot;请输入二次函数的一般式系数 a, b, c: &quot;);
+	scanf(&quot;%lf %lf %lf&quot;, &amp;a, &amp;b, &amp;c);
+
+	// 计算顶点的 h 和 k
+	h = -b / (2 * a);
+	k = (4.0 * a * c - b * b) / (4.0 * a);;
+
+	// 输出顶点式与顶点
+	printf(&quot;二次函数的顶点式为:\n&quot;);
+	printf(&quot;y = %.2lf * (x - %.2lf)^2 + %.2lf\n&quot;, a, h, k);
+	return 0;
+}
+</code></pre>
+<h1 id="二完善反馈二次函数的顶点">二.完善：反馈二次函数的顶点</h1>
+<h2 id="21理解二次函数的顶点">2.1理解二次函数的顶点</h2>
+<p>在顶点式中， <code>y = a(x - h)^2 + k</code>其中 <code>(h, k)</code> 是二次函数的顶点坐标,也就是<code>[-b/2a,(4ac-b^2)/(4a)]</code>。</p>
+<h2 id="22反馈方法">2.2反馈方法</h2>
+<pre><code class="language-c">printf(&quot;顶点坐标为：(%.2lf, %.2lf)\n&quot;, h, k);
+//这个是由于我们在上一步早已经计算好了h，k的值
+</code></pre>
+<h2 id="23最终代码">2.3最终代码</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+	double a, b, c, h, k;
+
+	// 输入二次函数的一般式系数
+	printf(&quot;请输入二次函数的一般式系数 a, b, c: &quot;);
+	scanf(&quot;%lf %lf %lf&quot;, &amp;a, &amp;b, &amp;c);
+
+	// 计算顶点的 h 和 k
+	h = -b / (2 * a);
+	k = (4.0 * a * c - b * b) / (4.0 * a);
+
+	// 输出顶点式与顶点
+	printf(&quot;二次函数的顶点式为:\n&quot;);
+	printf(&quot;y = %.2lf * (x - %.2lf)^2 + %.2lf\n&quot;, a, h, k);
+	printf(&quot;顶点坐标为：(%.2lf, %.2lf)\n&quot;, h, k);
+	return 0;
+}
+</code></pre>
+<h1 id="三进阶检测a是否为0并报错">三.进阶：检测a是否为0，并报错</h1>
+<h2 id="31理解二次函数的a不可以为0">3.1理解二次函数的a不可以为0</h2>
+<p>如果a为0，则函数中二次项无意义，这不是一个有效的二次函数，无法计算k值。</p>
+<h2 id="32判定方法">3.2判定方法</h2>
+<p>使用if语句，如果a等于零，则报错，否则就正常运算。</p>
+<pre><code class="language-c">	if (a == 0){
+		printf(&quot;错误：a不可以等于0\n&quot;);
+		return 1;
+		// 返回非零值表示程序异常终止
+	} 
+	else {
+		// 计算顶点的 h 和 k
+		h = -b / (2 * a);
+		k = (4.0 * a * c - b * b) / (4.0 * a);
+    }
+</code></pre>
+<h1 id="四结束完整代码与测试">四.结束：完整代码与测试</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+	double a, b, c, h, k;
+	// 输入二次函数的一般式系数
+	printf(&quot;请输入二次函数的一般式系数 a, b, c: &quot;);
+	scanf(&quot;%lf %lf %lf&quot;, &amp;a, &amp;b, &amp;c);
+	// 检查 a 是否为零
+	if (a == 0) {
+		printf(&quot;错误：a不可以等于0\n&quot;);
+		return 1;
+		// 返回非零值表示程序异常终止
+	} 
+    else {
+		// 计算顶点的 h 和 k
+		h = -b / (2 * a);
+		k = (4.0 * a * c - b * b) / (4.0 * a);
+
+		// 输出顶点式与顶点
+		printf(&quot;二次函数的顶点式为:\n&quot;);
+		printf(&quot;y = %.2lf * (x - %.2lf)^2 + %.2lf\n&quot;, a, h, k);
+		printf(&quot;顶点坐标为：(%.2lf, %.2lf)\n&quot;, h, k);
+		return 0;
+	}
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://bu.dusays.com/2024/02/10/65c6e5e8ed18b.png" alt="测试图片" title="当a=5 b=6 c=10时，返回如下" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://bu.dusays.com/2024/02/11/65c833d2928e7.png" alt="测试图片-2" title="当a=0时，返回如下" loading="lazy"></figure>
+<h1 id="四附录变量说明">四.附录：变量说明</h1>
+<ol>
+<li>a：一般式 <code>y = ax^2 + bx + c</code> 中二次项系数</li>
+<li>b：一般式 <code>y = ax^2 + bx + c</code> 中一次项系数</li>
+<li>c：一般式 <code>y = ax^2 + bx + c</code> 中常数项</li>
+<li>h： <code>y = a(x - h)^2 + k</code>中的h，顶点坐标点一部分（具体计算过程见【1.2 转化步骤】）</li>
+<li>k：<code>y = a(x - h)^2 + k</code>中的k，顶点坐标点一部分（具体计算过程见【1.2 转化步骤】）</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Excel教程第三期-“时间与文本”函数]]></title>
+        <id>https://tech.kegongteng.cn/excel-3/</id>
+        <link href="https://tech.kegongteng.cn/excel-3/">
+        </link>
+        <updated>2024-02-04T06:59:18.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<blockquote>
+<p>本期教程由于个人时间原因，并未制作视频版本。为了有一定的效果，您可以下载本期的示范Excel文件，以此来帮助你学习： <a href="http://share.kegongteng.cn/kdyhJo">文件下载链接</a></p>
+</blockquote>
+</blockquote>
+<h1 id="一提取年">一.提取年</h1>
+<p>YEAR函数是从日期中提取年<br>
+<code>语法：=YEAR(单元格)</code></p>
+<h1 id="二提取月">二.提取月</h1>
+<p>MONTH函数是从日期中提取月<br>
+<code>语法：=MONTH(单元格)</code></p>
+<h1 id="三提取天">三.提取天</h1>
+<p>DAY函数是从日期中提取日<br>
+<code>语法：=DAY(单元格)</code></p>
+<h1 id="四当前日期">四.当前日期</h1>
+<p>TODAY函数是返回当前日期的函数，<br>
+<code>语法：=today(单元格)，是一个跟随时间变化而变化的函数</code></p>
+<h1 id="五当前时间">五.当前时间</h1>
+<p>NOW函数是返回当前时间的函数。<br>
+<code>固定公式：=now(单元格)</code></p>
+<blockquote>
+<p>注意：每分钟都会变化，按键盘上的F9键可以刷新，一般都是配合其它函数一起使用</p>
+</blockquote>
+<h1 id="六生成日期">六.生成日期</h1>
+<p>DATE函数是指输入指定的参数生成日期<br>
+<code>语法：=date（year,month,day）</code></p>
+<h1 id="七计算日期差">七.计算日期差</h1>
+<p>DATEDIF函数是计算两日期之差，返回两个日期之间的年\月\日间隔数。<br>
+<code>语法：=datedif(start_date,end_date,unit)</code></p>
+<blockquote>
+<p>说明：Start_date 起始日期<br>
+End_date 结束日期<br>
+Unit 为所需信息的返回类型：Y&quot; 时间段中的整年数；&quot;M&quot; 时间段中的整月数；&quot;D&quot; 时间段中的天数；&quot;MD&quot; 起始日期与结束日期的同月间隔天数；&quot;YD&quot; 起始日期与结束日期的同年间隔天数；&quot;YM&quot; 起始日期与结束日期的同年间隔月数。</p>
+</blockquote>
+<h1 id="八日期转星期">八.日期转星期</h1>
+<p>WEEKDAY函数是返回某日期的星期数。<br>
+<code>语法：=weekday(serial_number，return_type)</code></p>
+<blockquote>
+<p>说明：serial_number 指日期<br>
+return_type指返回类型，一般都选择2</p>
+</blockquote>
+<h1 id="九重复显示指定内容">九.重复显示指定内容</h1>
+<p>REPT函数是按照给定的次数重复显示文本的函数。<br>
+<code>语法：=rept(需要重复显示的文本,重复显示的次数)</code></p>
+<h1 id="十计算文本长度">十.计算文本长度</h1>
+<p>LEN函数是计算字符串长度的函数。<br>
+<code>语法：=LEN(单元格)</code></p>
+<h1 id="十一从左提取内容">十一.从左提取内容</h1>
+<p>LEFT函数用于从一个文本字符串的第一个字符开始返回指定个数的字符。<br>
+<code>语法：=left(text,[num_chars])</code></p>
+<blockquote>
+<p>说明：text:文本字符串<br>
+num_chars:从左边第一个字符开始提取的个数</p>
+</blockquote>
+<h1 id="十二从右提取内容">十二.从右提取内容</h1>
+<p>RIGHT函数和LEFT函数用法一样，指的是从右边第一个字符开始提取字符<br>
+<code>语法：=RIGHT(text,[num_chars])</code></p>
+<h1 id="十三从中间提取内容">十三.从中间提取内容</h1>
+<p>MID函数是从一个字符串中截取出指定数量的字符<br>
+<code>语法：=MID(text,start_num,num_chars)</code></p>
+<blockquote>
+<p>注意：text:文本字符串<br>
+start_num：从字符串的第几个开始<br>
+num_chars：提取的字符长度</p>
+</blockquote>
+<h1 id="十四快速合并内容">十四.快速合并内容</h1>
+<p>CONCAT函数用于连接两个或多个内容，比文本连接符号&amp;更高效<br>
+<code>语法：=CONCAT(单元格：单元格)</code></p>
+<h1 id="十五文本连接">十五.文本连接</h1>
+<p>文本连接符&amp;，把几个内容连接起来，可以是数字、单元格引用、字符等<br>
+<code>语法：=单元格&amp;单元格</code></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Excel教程第二期-进阶版函数]]></title>
+        <id>https://tech.kegongteng.cn/excel-2/</id>
+        <link href="https://tech.kegongteng.cn/excel-2/">
+        </link>
+        <updated>2024-01-08T11:21:43.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本期教程由于个人时间原因，并未制作视频版本。为了有一定的效果，您可以下载本期的示范Excel文件，以此来帮助你学习： <a href="http://share.kgthe.top/ccXdAj">文件下载链接</a></p>
+</blockquote>
+<h1 id="直接砍掉小数点">直接砍掉小数点</h1>
+<p>TRUNC函数是将数字的小数部分直接截去，返回整数，不讲究四舍五入。<br>
+<code>语法：=TRUNC(number, [num_digits])</code></p>
+<blockquote>
+<p>要求：TRUNC 函数语法的参数<br>
+1.number必需。 需要截尾取整的数字。<br>
+2.[num_digits]可选。一般都不需要第二个参数。</p>
+</blockquote>
+<p>案例：<br>
+=trunk(9.99)，返回值9<br>
+=trunk(4.12)，返回值4<br>
+=trunk(0.32)，返回值0<br>
+=trunk(-8.43)，返回值-8</p>
+<h1 id="四舍五入小数点">四舍五入小数点</h1>
+<p>ROUND函数将数字四舍五入到指定的位数。<br>
+<code>语法：=ROUND(number, num_digits)</code></p>
+<blockquote>
+<p>要求<br>
+1.number必需参数。 要四舍五入的数字。<br>
+2.num_digits必需参数。 要进行四舍五入运算的位数。</p>
+</blockquote>
+<p>案例：Excel中小数点后为0时，默认省略不显示。</p>
+<h1 id="随机整数">随机整数</h1>
+<p>RANDBETWEEN函数是返回指定的最小值和指定最大值之间的一个随机整数。<br>
+<code>语法：RANDBETWEEN（bottom,top）</code></p>
+<blockquote>
+<p>要求<br>
+1.Bottom参数： 指定的最小整数。<br>
+2.Top参数： 指定的最大整数。</p>
+</blockquote>
+<h1 id="随机小数">随机小数</h1>
+<p>Rand函数是返回一个大于等于 0 及小于 1随机实数。<br>
+<code>语法：RAND()</code></p>
+<h1 id="求余函数">求余函数</h1>
+<p>mod函数是一个求余函数,是用于返回两数相除的余数，返回结果的符号与除数的符号相同。<br>
+<code>语法：=MOD(被除数,除数)</code></p>
+<h1 id="奇偶数判断">奇偶数判断</h1>
+<p>ISODD函数是一个奇数判断函数，如果数字为奇数则返回TRUE<br>
+<code>语法：=ISODD（）</code><br>
+ISEVEN函数是一个偶数判断函数，如果数字为偶数则返回TRUE<br>
+<code>语法：=ISEVEN（）</code></p>
+<h1 id="统计数字">统计数字</h1>
+<p>COUNT函数给定数据集合或者单元格区域中数据的个数进行计数，COUNT函数只能对数字数据进行统计，对于空单元格、逻辑值或者文本数据将不统计。<br>
+<code>语法：=COUNT(G3:G14)</code></p>
+<h1 id="统计非空单元格">统计非空单元格</h1>
+<p>COUNTA函数是计算区域内非空单元格的个数。<br>
+<code>语法：=COUNTA(G3:G14)</code></p>
+<h1 id="统计空白单元格">统计空白单元格</h1>
+<p>COUNTBLANK函数是计算区域内空白单元格的个数。<br>
+<code>语法：=COUNTBLANK(G3:G14)</code></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[EXCEL教程-简单公式与函数]]></title>
+        <id>https://tech.kegongteng.cn/excel-1/</id>
+        <link href="https://tech.kegongteng.cn/excel-1/">
+        </link>
+        <updated>2023-11-18T04:51:12.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>您可以下载本期的示范Excel文件，以此来帮助你学习： <a href="http://share.kgthe.top/afSNdR">文件下载链接</a></p>
+</blockquote>
+<h1 id="一excel公式的介绍">一．EXCEL公式的介绍</h1>
+<p>Excel公式通常包含数据和运算符，并以等号“=”开头，如：“=1+1，通过“=”告诉计算机需要计算“26+19”的值并显示结果。当录入公式时以加号“+”开头，单元格中的公式就会自动转为以“=”开头的公式。一般情况下，公式中的数据包括数值、单元格地址和函数。接下来，我们通过Excel公式简单操作下：怎么相加或相减单元格里的数据。</p>
+<h1 id="二填充柄">二．填充柄</h1>
+<p>用填充柄功能，可快速填充变化有规律的数据。位于选定区域右下角的小方块就是填充柄，当鼠标指针指向填充柄时，鼠标指针会变为加粗黑“+”字形。</p>
+<p>Excel填充柄的两种基本填充方式：一种是复制单元格，填充的内容为所选择单元格的内容与格式；另一种是根据所选择单元格中数据的变化规律，进行序列填充。</p>
+<h1 id="三函数的使用">三．函数的使用</h1>
+<ol>
+<li>
+<p>求和公式SUN()：计算单元格区域中所有数值的和。</p>
+</li>
+<li>
+<p>平均值函数AVERAGE()：计算单元格区域中所有数值的平均值。</p>
+</li>
+<li>
+<p>计数函数COUNT()：计算单元格区域中包含数字的单元格个数。</p>
+</li>
+<li>
+<p>最大值函数MAX()：反馈所选单元格区域数值中的最大值。</p>
+</li>
+<li>
+<p>最小值函数MIN()：反馈所选单元格区域数值中的最小值。</p>
+</li>
+</ol>
+<p>公式与函数的关系：Excel公式中的数据可以只有函数,如“=SUM(A1:B1)”,表示计算A1：B3单元格区域中所有单元格记录的数值的和，“SUM”是函数，“A1：B3”是函数参数，“=SUM(A1:B1)”是个公式。所以函数可以是公式的一部分，但公式不一定要包含函数。</p>
+<h1 id="四选择范围的方式">四.选择范围的方式</h1>
+<p>在使用函数中，我们需要选择单元格范围，在excel中有两种方法可以选择范围。</p>
+<p>第一种：单击单元格，会表示为 B4</p>
+<p>第二种：滑动选择单元格范围，会表示为(B4:L4)，这种方法建议使用于函数。</p>
+<h1 id="五总结">五.总结</h1>
+<p>1.写公式：将你需要的公式写入单元格</p>
+<p>2.填写变量：根据公式填写变量，例如公式使用范围</p>
+<p>3.查看结果按下回车查看是否有反馈，如果没有进行检查</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Listary的安装与简易使用]]></title>
+        <id>https://tech.kegongteng.cn/Listary/</id>
+        <link href="https://tech.kegongteng.cn/Listary/">
+        </link>
+        <updated>2023-11-18T04:45:13.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>知识库图片版链接：https://kgthe.top/technology-3</p>
+</blockquote>
+<h1 id="一安装">一.安装</h1>
+<p>1.下载安装包：打开Listary 官网，下载安装包（点击“”Download Listary FREE”，该版本是免费版）。<br>
+2.打开安装包，点击确定协议。（即第二项）<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380279604.png" alt="" loading="lazy"><br>
+3.选择安装模式<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380287047.png" alt="" loading="lazy"><br>
+4.安装模式<br>
+（1）推荐（标准）安装模式（第一个）：确定后，将Listary安装在C盘中<br>
+（2）自定义安装模式（第二个）：自定义安装目录。这里建议选择自定义安装模式，防止C盘过满。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700282927329.png" alt="" loading="lazy"><br>
+5.推荐（标准）安装模式：选项第一个选项后，等待进度条完成后，即可使用。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380312222.png" alt="" loading="lazy"><br>
+6.自定义安装模式：<br>
+6.1选择第二个选项后，根据自己的需要安装（软件安装路径等等）6.2根据自己的需要选择是否要在桌面创建Listary的快捷方式（第一项）或者在任务栏创建Listary的快捷方式（第二项）<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380322422.png" alt="" loading="lazy"><br>
+6.2根据自己的需要选择是否要在桌面创建Listary的快捷方式（第一项）或者在任务栏创建Listary的快捷方式（第二项）<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380337109.png" alt="" loading="lazy"><br>
+6.3确定安装路径后，点击【继续】<br>
+6.4等待进度条完成后，即可使用。</p>
+<h1 id="二简易使用">二.简易使用</h1>
+<p>在本教程，我们将描述一下使用方法：关键词搜索，直接搜索，在Listary中对文件进行更改，在文件资源管理器中搜索</p>
+<h2 id="1直接搜索">1.直接搜索</h2>
+<p>双击【Ctrl】，出现搜索框，即可搜索本地文件。点击搜索结果打开文件/软件<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380401705.png" alt="" loading="lazy"></p>
+<h2 id="2关键词搜索">2.关键词搜索</h2>
+<p>2.1右击任务栏中Listary的图标，点击【选项】，打开Listary的设置。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380406835.png" alt="" loading="lazy"><br>
+2.2接下来依次点击【特性---文件搜索---{+}号添加关键词（{-}号可以删减已经添加的关键词）】，接下来输入关键词与文件夹路径。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380416726.png" alt="" loading="lazy"><br>
+<img src="https://tech.kegongteng.cn/post-images/1700282954558.png" alt="" loading="lazy"><br>
+2.3设置好了之后，双击【Ctrl】，输入关键词（即序号1），即可看到名称（即序号2）。点击后，打开文件夹（即序号3所代表的文件夹）。</p>
+<h2 id="3在listary中对文件进行更改">3.在Listary中对文件进行更改</h2>
+<p>双击【Ctrl】，搜索需要更改的文件，右击搜索结果。即可更改文件的名字，复制等操作<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380425905.png" alt="" loading="lazy"></p>
+<h2 id="4在文件资源管理器中搜索">4.在文件资源管理器中搜索</h2>
+<p>下载与另存为时，可以在文件资源管理器中搜索并打开文件夹。在下方搜索栏中直接搜索即可。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380429367.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PR字幕教程]]></title>
+        <id>https://tech.kegongteng.cn/pr-zimu/</id>
+        <link href="https://tech.kegongteng.cn/pr-zimu/">
+        </link>
+        <updated>2023-11-18T04:43:49.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>知识库图片版：https://kgthe.top/technology-2</p>
+</blockquote>
+<ol>
+<li>打开PR的文件→新建→旧版标题<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380174571.jpg" alt="" loading="lazy"></li>
+<li>填写字幕名字等基础信息<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380180752.jpg" alt="" loading="lazy"></li>
+<li>在弹出的框中，点击左边的&quot;T&quot;(绿色圈的)，在红色框中选择适合位置按一下，然后填写内容，在&quot;旧标题属性&quot;中更改高度等信息，完成后关闭窗口即可<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380183759.jpg" alt="" loading="lazy"></li>
+</ol>
+<blockquote>
+<p>注：滚动字幕要在窗口中，按蓝色按钮，在跳出的选择框中，选择滚动字幕（如果你需要其它类型的字幕，也可以在这个框内选择）<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380186911.jpg" alt="" loading="lazy"></p>
+</blockquote>
+<ol start="4">
+<li>在黄色框中的字幕拖入时间轴上<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380190665.jpg" alt="" loading="lazy"></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Flash教程3 路径动画与遮罩动画]]></title>
+        <id>https://tech.kegongteng.cn/flash-3/</id>
+        <link href="https://tech.kegongteng.cn/flash-3/">
+        </link>
+        <updated>2023-11-18T04:24:07.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>知识库图片版链接：https://kgthe.top/technology-flash3</p>
+</blockquote>
+<h1 id="31路径动画">3.1路径动画</h1>
+<ol>
+<li>点击第一帧，将图片拖入到动画开始位置。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379868488.png" alt="" loading="lazy"></li>
+<li>点击【图层1】（即图片所在的图层），创建【运动引导层】3. 点击【运动引导层】的第一帧，选择右侧工具栏中的【铅笔工具】，并选择【平滑】。4.画出路径<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379871948.png" alt="" loading="lazy"></li>
+<li>在两“层”创建最后一帧（除第一帧之外，其他帧都需要右击选择【插入关键帧】）<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379894777.png" alt="" loading="lazy"></li>
+<li>画出路径<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379886451.png" alt="" loading="lazy"></li>
+<li>选择【选择工具】，点击第一帧，按住素材中的圆点，拖放至线条开始部分。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379906248.png" alt="" loading="lazy"></li>
+<li>选择【选择工具】，点击第一帧，按住素材中的圆点，拖放至线条开始部分<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379909723.png" alt="" loading="lazy"></li>
+<li>选择【选择工具】，点击第最后一帧，按住素材中的圆点，拖放至线条结束部分。完成</li>
+</ol>
+<h1 id="32遮罩动画">3.2遮罩动画</h1>
+<ol>
+<li>制作被遮罩物动画（例如，补间动画，逐帧动画等等，可根据自己要求）<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379915208.png" alt="" loading="lazy"></li>
+<li>点击【图层1】（即图片所在图层），右击设置为【遮罩层】（记得把锁解开哦，不然无法操作）<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379920637.png" alt="" loading="lazy"></li>
+<li>拖入遮罩物，添加最后一帧，完成！<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379926550.png" alt="" loading="lazy"></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Flash教程2 补间动画]]></title>
+        <id>https://tech.kegongteng.cn/flash-2/</id>
+        <link href="https://tech.kegongteng.cn/flash-2/">
+        </link>
+        <updated>2023-11-18T04:20:00.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>知识库图片版链接：https://kgthe.top/technology-flash2</p>
+</blockquote>
+<h1 id="21知识点">2.1知识点</h1>
+<figure data-type="image" tabindex="1"><img src="https://tech.kegongteng.cn/post-images/1700281294366.png" alt="" loading="lazy"></figure>
+<h1 id="22动作补间动画">2.2动作补间动画</h1>
+<ol>
+<li>将图片拖入到右侧的【库】中。点击第一帧，然后将【库】中的图片拖入到动画开始位置。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380038436.png" alt="" loading="lazy"></li>
+<li>点击最后一帧（除第一帧之外，其他帧都需要右击选择【插入关键帧】），将图片移入到动画结束位置。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380042123.png" alt="" loading="lazy"></li>
+<li>点击开始帧与结束帧的中间位置，接下来点击【补间】中的【动画】。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380047896.png" alt="" loading="lazy"></li>
+</ol>
+<h1 id="23形状补间动画">2.3形状补间动画</h1>
+<ol>
+<li>点击第一帧，利用左边的工具栏画出图形，画在动画开始位置。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380054411.png" alt="" loading="lazy"></li>
+<li>点击最后一帧（除第一帧之外，其他帧都需要右击选择【插入关键帧】），将图片移入到动画结束位置。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380060458.png" alt="" loading="lazy"></li>
+<li>点击开始帧与结束帧的中间位置，接下来点击【补间】中的【形状】<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380065660.png" alt="" loading="lazy"></li>
+</ol>
+<h1 id="24将形状转化成元件">2.4将形状转化成元件</h1>
+<ol>
+<li>点击形状，右击【转换为元件】<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380100032.png" alt="" loading="lazy"></li>
+<li>根据需要，输入名称等内容，最后点【确定】。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380080747.png" alt="" loading="lazy"></li>
+<li>完成，在【库】中你就可以看到元件了。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700380093561.png" alt="" loading="lazy"></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Flash教程1 逐帧动画]]></title>
+        <id>https://tech.kegongteng.cn/flash-1/</id>
+        <link href="https://tech.kegongteng.cn/flash-1/">
+        </link>
+        <updated>2023-11-18T04:15:28.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>知识库图片版链接：https://kgthe.top/technology-flash1</p>
+</blockquote>
+<h1 id="11图片动画">1.1“图片动画”</h1>
+<ol>
+<li>
+<p>将图片拖入到右侧的【库】中（如果没有库的，在上方【窗口】中寻找）<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379586021.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>点击第一帧（即上方【时间轴】中的第一个小方格），将第一帧的图片拖入到画布中。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379591926.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>点击第二帧，右击选择【插入关键帧】<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379595345.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>点击第二帧（即上方【时间轴】中的第二个小方格，其他帧以此类推），将第二帧的图片拖入到画布中。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379603308.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>重复以上操作，直到所有图片全部插入完成（除第一帧之外，其他帧都需要右击选择【插入关键帧】）</p>
+</li>
+<li>
+<p>接下来，我们要将插入的图片对齐。点击【窗口】，点击【对齐】（下方图片中没有显示【对齐】）<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379609447.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>点击第一帧中的图片，根据自己要求选择不同的对齐方式<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379613192.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>重复以上操作，将所有图片都到对齐。接下来点击【控制】中的【测试影片】看看有没有其他问题。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379641248.png" alt="" loading="lazy"></p>
+</li>
+</ol>
+<h1 id="12文字动画">1.2文字动画</h1>
+<ol>
+<li>点击左边的工具栏中的【A】（文字工具），再在画布中点击出现文字框，输入文字。<br>
+下方【属性】中可以更改文字的颜色，大小等内容。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700379651608.png" alt="" loading="lazy"></li>
+<li>按照以上方法添加文字，添加图形等制作方法也类似，可模仿制作</li>
+</ol>
+<p>注意：除第一帧之外，其他帧都需要右击选择【插入关键帧】，再添加文字!</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[达芬奇-进阶字幕添加]]></title>
+        <id>https://tech.kegongteng.cn/da-2/</id>
+        <link href="https://tech.kegongteng.cn/da-2/">
+        </link>
+        <updated>2023-11-18T04:13:25.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="三滚动字幕">三.滚动字幕</h1>
+<p>1.从左侧工具箱的字幕中拖出滚动，放置时间线上。<br>
+<img src="https://tech.kegongteng.cn/post-images/1700280841763.jpg" alt="" loading="lazy"><br>
+2.右上角的多信息文本部分可以调整字幕的内容与其他内容<br>
+<img src="https://tech.kegongteng.cn/post-images/1700280847482.jpg" alt="" loading="lazy"><br>
+3.点击面监视器左下角的长方形按钮，在选择栏中选择第一项“变化”<br>
+<img src="https://tech.kegongteng.cn/post-images/1700280851988.jpg" alt="" loading="lazy"><br>
+4.在画面上移动字幕到适合位置<br>
+<img src="https://tech.kegongteng.cn/post-images/1700280860770.jpg" alt="" loading="lazy"></p>
+<h1 id="四滚动字幕图片">四.滚动字幕+图片</h1>
+<p>1.根据第3部分完成滚动字幕的调整，把图片拖入时间轴<br>
+<img src="https://tech.kegongteng.cn/post-images/1700280864331.jpg" alt="" loading="lazy"><br>
+2.点击画面监视器左下角的长方形按钮，在选择栏中选择第一项“变化”<br>
+<img src="https://tech.kegongteng.cn/post-images/1700280869006.jpg" alt="" loading="lazy"><br>
+3.在画面上移动字幕到适合位置<br>
+<img src="https://tech.kegongteng.cn/post-images/1700280871920.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+</feed>

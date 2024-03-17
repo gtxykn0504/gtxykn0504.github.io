@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3HNHcPQryX02hZpy",ck:"3HNHcPQryX02hZpy"})</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>EXCEL教程-简单公式与函数 -
+    Kegongteng 信息技术札记</title>
+<meta name="ThemeName" content="Gridea Theme Rocky by EryouHao" />
+<meta name="referrer" content="always" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<link rel="manifest" href="/site.webmanifest">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet preload" as="style"> -->
+<link href="/media/css/remixicon.css" rel="stylesheet" as="font">
+<link rel="stylesheet" href="/media/css/tailwind.css">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="EXCEL教程-简单公式与函数 -
+    Kegongteng 信息技术札记 - Atom Feed" href="/atom.xml">
+  
+
+    
+  <!-- <title name="EXCEL教程-简单公式与函数"> </title> -->
+  <meta name="socialText" content="Blogger / Technophile / Student" />
+  <meta name="description" content="
+您可以下载本期的示范Excel文件，以此来帮助你学习： 文件下载链接
+
+一．EXCEL公式的介绍
+Excel公式通常包含数据和运算符，并以等号“=”开头，如：“=1+1，通过“=”告诉计算机需要计算“26+19”的值并显示结果。当录入公式..." />
+  <meta name="referrer" content="always" />
+  <link rel="canonical" href="https://tech.kegongteng.cn/excel-1/" />
+  <link rel="preconnect" href="https://cdn.staticfile.org" />
+  <!-- Code Highlight -->
+  
+  <script src="https://tech.kegongteng.cn/media/prism.js"></script>
+  <script>
+    Prism.highlightAll();
+  </script>
+  
+  
+  <link rel="stylesheet preload"
+    href="https://tech.kegongteng.cn/media/css/prism-atom-dark.css"
+    as="style" />
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-circle-fill" v-show="showMenu"></i>
+      <i class="ri-menu-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="https://tech.kegongteng.cn" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        主页
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        文章
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        专栏
+      </a>
+    
+      <a href="/friends" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        朋友
+      </a>
+    
+      <a href="https://zheary.com" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+   <!--<a href="https://tech.kegongteng.cn/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>-->
+  </nav>
+</div>
+    <a href="https://tech.kegongteng.cn"
+      class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Kegongteng 信息技术札记
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div
+        class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-32 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          EXCEL教程-简单公式与函数
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">
+            2023-11-18 · 3 min read
+          </div>
+          
+          <a href="https://tech.kegongteng.cn/tag/juoV1LmbZ/"
+            class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+            <i class="ri-hashtag"></i>
+            Excel
+          </a>
+          
+        </div>
+        <div class="markdown mb-16" v-pre>
+          <blockquote>
+<p>您可以下载本期的示范Excel文件，以此来帮助你学习： <a href="http://share.kgthe.top/afSNdR">文件下载链接</a></p>
+</blockquote>
+<h1 id="一excel公式的介绍">一．EXCEL公式的介绍</h1>
+<p>Excel公式通常包含数据和运算符，并以等号“=”开头，如：“=1+1，通过“=”告诉计算机需要计算“26+19”的值并显示结果。当录入公式时以加号“+”开头，单元格中的公式就会自动转为以“=”开头的公式。一般情况下，公式中的数据包括数值、单元格地址和函数。接下来，我们通过Excel公式简单操作下：怎么相加或相减单元格里的数据。</p>
+<h1 id="二填充柄">二．填充柄</h1>
+<p>用填充柄功能，可快速填充变化有规律的数据。位于选定区域右下角的小方块就是填充柄，当鼠标指针指向填充柄时，鼠标指针会变为加粗黑“+”字形。</p>
+<p>Excel填充柄的两种基本填充方式：一种是复制单元格，填充的内容为所选择单元格的内容与格式；另一种是根据所选择单元格中数据的变化规律，进行序列填充。</p>
+<h1 id="三函数的使用">三．函数的使用</h1>
+<ol>
+<li>
+<p>求和公式SUN()：计算单元格区域中所有数值的和。</p>
+</li>
+<li>
+<p>平均值函数AVERAGE()：计算单元格区域中所有数值的平均值。</p>
+</li>
+<li>
+<p>计数函数COUNT()：计算单元格区域中包含数字的单元格个数。</p>
+</li>
+<li>
+<p>最大值函数MAX()：反馈所选单元格区域数值中的最大值。</p>
+</li>
+<li>
+<p>最小值函数MIN()：反馈所选单元格区域数值中的最小值。</p>
+</li>
+</ol>
+<p>公式与函数的关系：Excel公式中的数据可以只有函数,如“=SUM(A1:B1)”,表示计算A1：B3单元格区域中所有单元格记录的数值的和，“SUM”是函数，“A1：B3”是函数参数，“=SUM(A1:B1)”是个公式。所以函数可以是公式的一部分，但公式不一定要包含函数。</p>
+<h1 id="四选择范围的方式">四.选择范围的方式</h1>
+<p>在使用函数中，我们需要选择单元格范围，在excel中有两种方法可以选择范围。</p>
+<p>第一种：单击单元格，会表示为 B4</p>
+<p>第二种：滑动选择单元格范围，会表示为(B4:L4)，这种方法建议使用于函数。</p>
+<h1 id="五总结">五.总结</h1>
+<p>1.写公式：将你需要的公式写入单元格</p>
+<p>2.填写变量：根据公式填写变量，例如公式使用范围</p>
+<p>3.查看结果按下回车查看是否有反馈，如果没有进行检查</p>
+
+        </div>
+
+        <!-- copyright -->
+        <div class="copyright">
+          <div class="container">
+            <p><small class="text-gray-400">
+                版权声明：此站点所有文章除特别声明外，均采用CC BY-NC-ND 4.0协议进行版权保护，您不得修改本文章任何部分，且转载需注明出处
+             </small></p>
+          </div>
+        </div>
+
+        <div class="text-center text-gray-300">
+          
+        </div>
+      </div>
+
+      
+
+      
+        <button type="button" class="collapsible">
+          <i class="ri-message-2-line"></i>
+        </button>
+        <div class="tcomment rounded-lg px-4 py-4">
+          <div id="tcomment"></div>
+        </div>  
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+
+    </div>
+
+
+    <!-- TOC Container -->
+    <div id="toc"
+      class="fixed right-0 bottom-0 mb-20 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight"
+      @click="showToc = true">
+      <i class="ri-menu-line font-bold"></i>
+    </div>
+
+    <div
+      class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 rounded-lg p-4 m-4  shadow-md bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast"
+      :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div
+          class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast"
+          @click="showToc = false">
+          <i class="ri-close-circle-fill"></i>
+        </div>
+      </div>
+      <div class="post-toc-container"><ul class="markdownIt-TOC">
+<li><a href="#%E4%B8%80excel%E5%85%AC%E5%BC%8F%E7%9A%84%E4%BB%8B%E7%BB%8D">一．EXCEL公式的介绍</a></li>
+<li><a href="#%E4%BA%8C%E5%A1%AB%E5%85%85%E6%9F%84">二．填充柄</a></li>
+<li><a href="#%E4%B8%89%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8">三．函数的使用</a></li>
+<li><a href="#%E5%9B%9B%E9%80%89%E6%8B%A9%E8%8C%83%E5%9B%B4%E7%9A%84%E6%96%B9%E5%BC%8F">四.选择范围的方式</a></li>
+<li><a href="#%E4%BA%94%E6%80%BB%E7%BB%93">五.总结</a></li>
+</ul>
+</div>
+    </div>
+
+    <!-- Back to top -->
+    <div
+      class="fixed right-0 bottom-0 mb-4 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200"
+      @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-circle-fill"></i>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>-->
+  <script src="https://tech.kegongteng.cn/media/scripts/vue.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/main.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/view-image.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/lazyload.min.js"></script>
+
+  <!--根据内容动态加载-->
+  <script type="text/javascript">
+    window.onload = function () {
+      //根据内容动态加载mermiad
+      if (document.getElementsByClassName("language-mermaid").length != 0) {
+        console.log("find mermaid")
+        for (let x of document.getElementsByClassName("language-mermaid")) {
+          if (x.nodeName == "CODE") {
+            let m = document.createElement("div");
+            m.classList.add("mermaid");
+            m.textContent = x.textContent;
+            x.parentNode.insertAdjacentElement("beforebegin", m);
+          }
+        }
+        let script = document.createElement('script');
+        defer = "defer";
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/mermaid.min.js";
+        document.body.append(script);
+        script.onload = function () {
+          mermaid.initialize({
+            startOnLoad: false
+          });
+          mermaid.init();
+          console.log("mermaid init done");
+        }
+      }
+
+      //bilibili 视频支持
+      var content = document.getElementsByClassName("language-bilibili")[0];
+      if (content != null) {
+        var m = document.createElement("div");
+        m.classList.add("bilibili-video");
+        m.innerHTML = content.textContent;
+        content.parentNode.insertAdjacentElement("beforeend", m);
+      }
+      //katex自适应加载
+      if (document.getElementsByClassName("katex").length != 0) {
+        let script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/katex.min.js";
+        document.body.append(script);
+        script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/copy-tex.min.js";
+        document.body.append(script);
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/katex.min.css";
+        document.body.append(link);
+        link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/copy-tex.css";
+        document.body.append(link);
+      }
+
+      script = document.createElement('script');
+      script.defer = "defer"
+      script.src =
+        "https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js";
+      document.body.append(script);
+      script.onload = function () {
+        let scripts = document.createElement('script');
+        scripts.append(document.createTextNode(
+          " twikoo.init({envId: \"https://twikoo24.kegongteng.cn\",el: \"#tcomment\",});"));
+        var parentDiv = document.getElementById("toc").parentNode;
+        var sp = document.getElementById("toc");
+        parentDiv.insertBefore(scripts, sp);
+      }
+    }
+  </script>
+  <script>
+   comment_collapse();
+   function replace_src() {
+    var imgEl = document.getElementsByTagName('img');
+    for (var i=0; i<imgEl.length; i++) {
+        if(imgEl[i].getAttribute('src')) {
+          imgEl[i].setAttribute('data-src',imgEl[i].getAttribute('src'));
+          imgEl[i].removeAttribute('src'); //use only if you need to remove data-src attribute after setting src
+          imgEl[i].removeAttribute('loading'); 
+          imgEl[i].setAttribute('class','lazy');
+        }
+      }
+    }
+    replace_src();
+    window.ViewImage && ViewImage.init('img');
+    var lazyLoadInstance = new LazyLoad({});
+    lazyLoadInstance.update();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3HNHcPQryX02hZpy",ck:"3HNHcPQryX02hZpy"})</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>关于blog/网站的简易搭建 -
+    Kegongteng 信息技术札记</title>
+<meta name="ThemeName" content="Gridea Theme Rocky by EryouHao" />
+<meta name="referrer" content="always" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<link rel="manifest" href="/site.webmanifest">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet preload" as="style"> -->
+<link href="/media/css/remixicon.css" rel="stylesheet" as="font">
+<link rel="stylesheet" href="/media/css/tailwind.css">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="关于blog/网站的简易搭建 -
+    Kegongteng 信息技术札记 - Atom Feed" href="/atom.xml">
+  
+
+    
+  <!-- <title name="关于blog/网站的简易搭建"> </title> -->
+  <meta name="socialText" content="Blogger / Technophile / Student" />
+  <meta name="description" content="一.What？
+
+”何为blog？“
+
+很早之前，我就已经很想聊一聊关于blog这件事以及搭建网站的过程。但是，网站也有许多的教材是关于搭建网站的，但是文章内容大多数是比较专业的，或者内容不详细，对与普通人可能会有阅读困难，所以本篇文章就是..." />
+  <meta name="referrer" content="always" />
+  <link rel="canonical" href="https://tech.kegongteng.cn/blog/" />
+  <link rel="preconnect" href="https://cdn.staticfile.org" />
+  <!-- Code Highlight -->
+  
+  <script src="https://tech.kegongteng.cn/media/prism.js"></script>
+  <script>
+    Prism.highlightAll();
+  </script>
+  
+  
+  <link rel="stylesheet preload"
+    href="https://tech.kegongteng.cn/media/css/prism-atom-dark.css"
+    as="style" />
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-circle-fill" v-show="showMenu"></i>
+      <i class="ri-menu-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="https://tech.kegongteng.cn" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        主页
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        文章
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        专栏
+      </a>
+    
+      <a href="/friends" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        朋友
+      </a>
+    
+      <a href="https://zheary.com" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+   <!--<a href="https://tech.kegongteng.cn/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>-->
+  </nav>
+</div>
+    <a href="https://tech.kegongteng.cn"
+      class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Kegongteng 信息技术札记
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div
+        class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-32 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          关于blog/网站的简易搭建
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">
+            2023-10-03 · 7 min read
+          </div>
+          
+          <a href="https://tech.kegongteng.cn/tag/website/"
+            class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+            <i class="ri-hashtag"></i>
+            网站与博客
+          </a>
+          
+        </div>
+        <div class="markdown mb-16" v-pre>
+          <h1 id="一what">一.What？</h1>
+<blockquote>
+<p>”何为blog？“</p>
+</blockquote>
+<p>很早之前，我就已经很想聊一聊关于blog这件事以及搭建网站的过程。但是，网站也有许多的教材是关于搭建网站的，但是文章内容大多数是比较专业的，或者内容不详细，对与普通人可能会有阅读困难，所以本篇文章就是对小白或者不爱折腾的人搭建网站的教程。如果你是一个对网站有“向往之心”的人，你可以看看这篇文章，或许对你有帮助。</p>
+<p>我其实搞这个网站有一点原因是因为<sub>装逼</sub> 更好的分享文件与观点，也是有一个可以随心所欲使用的个性化email。在搭建这个网站之前希望你可以先好好的想想你的网站的作用，这很重要，<strong>不同的需求有不同的表达形式</strong>。</p>
+<h1 id="二how">二.How？</h1>
+<h2 id="21购买域名">2.1购买域名</h2>
+<blockquote>
+<p>Tips：域名与DNS解析内容见 <a href="https://kgthe.top/technology-yuming">信息技术-域名与DNS解析</a></p>
+</blockquote>
+<p>1.选择域名注册商</p>
+<p>选择正规的域名注册商，进行域名购买，比如腾讯云，阿里云，华为云等服务。</p>
+<blockquote>
+<p>防诈小提示：如果您心爱的域名已被他人注册，最好不要私下与域名主进行交易。</p>
+</blockquote>
+<p>2. 以阿里云为例子，我们要先注册阿里云账户，然后经过实名认证。</p>
+<figure data-type="image" tabindex="1"><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/A_3Ep0xPn.png" alt="" loading="lazy"></figure>
+<blockquote>
+<p>注意：强烈建议个人账号不要用于企业业务的购买！一定分清个人认证和企业认证：完成企业实名认证的账号归属为企业。完成个人实名认证的账号归属为个人。</p>
+</blockquote>
+<p>3.在查询框中输入您想要的域名，单击<strong>查域名</strong>。</p>
+<figure data-type="image" tabindex="2"><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/A-ovg-Rk4.png" alt="" loading="lazy"></figure>
+<p>3. 对于查询结果为<strong>未注册</strong>的域名，单击<strong>加入清单</strong>。</p>
+<figure data-type="image" tabindex="3"><img src="https://pic3.zhimg.com/80/v2-53e047e88923719966219fce0ada9652_720w.webp" alt="" loading="lazy"></figure>
+<p>4. 在<strong>域名清单</strong>中确认已添加的域名，单击<strong>去结算</strong>。</p>
+<p>5. 在<strong>确认订单</strong>页，选择域名的<strong>购买年限</strong>和<strong>持有者类型</strong>。</p>
+<figure data-type="image" tabindex="4"><img src="https://pica.zhimg.com/80/v2-574c31b698246cd4435852ad8c536940_720w.webp" alt="" loading="lazy"></figure>
+<p>6. 在购买途中可能需要选择<strong>域名信息模板。</strong></p>
+<ul>
+<li>
+<p>如果您的域名持有者信息模板已创建完成，您可以选择一个域名信息模板。</p>
+</li>
+<li>
+<p>如果您未提前创建好域名持有者信息模板，您可以单击创建新的信息模板，并如实填写域名持有者信息，并且进行认证。完成后回到本页面，选择您创建的信息模板。</p>
+</li>
+</ul>
+<blockquote>
+<p>注意：域名注册必须使用已完成实名认证的信息模板；未实名认证域名不能续费、将被暂停解析。</p>
+</blockquote>
+<p>7. （可选）许多提供商针对不同的域名后缀，会不定期提供一些优惠服务，例如优惠口令等。您可根据界面显示的内容选择是否使用优惠服务。</p>
+<p>8. 确认服务条款后，勾选我已阅读，理解并接受《域名在线服务条款》，单击立即购买。</p>
+<p>9. 选择支付方式后，单击立即支付。</p>
+<blockquote>
+<p>说明：域名注册须即时报送注册局系统，只有最终完成付款才会向注册局发送指令，下单后请尽快结算。付款方式有多种，如账号余额、支付宝、网银等，您可根据实际情况自行选择。</p>
+</blockquote>
+<p>10.完成支付后，域名注册订单会短暂的为“处理中”状态，待订单状态变为“成功”，域名即注册成功。</p>
+<p>11. 域名注册成功后还需要提交与域名注册信息相同的资料进行实名认证审核，部分特殊域名（例如.cn）还需进行资质审核。通过审核后域名才能正常使用。</p>
+<h2 id="22选择托管平台">2.2选择托管平台</h2>
+<p>搭建网站正常需要购买服务器等相关资源，但为方便，我们可以选择托管网站。托管网站会提供服务器和其他资源，我们这边以<a href="gridea.dev">Gridea</a>为例子说明。除此之外，也有许多其他的托管平台可以进行选择，例如谷歌的Blogger，按需选择即可。</p>
+<h2 id="23托管平台的初始化调整">2.3托管平台的“初始化调整”</h2>
+<p>由于不同的托管网站会提供不同形式的后台，但基本上能够调整的内容都差不多，例如网站的头像，名称板块。根据，不同托管网站的说明使用即可调整。</p>
+<p>以<a href="gridea.dev">Gridea</a>为例，它的后台可以分为一下部分，下面我们就来了解下。</p>
+<figure data-type="image" tabindex="5"><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/RLy-K7sU7.png" alt="" loading="lazy"></figure>
+<p>1.多网站调整：选择进行操作的不同网站，<a href="gridea.dev">Gridea</a>支持一个账户创建互相独立的3个网站，我们可以分别对调整控制。</p>
+<p>2.侧边栏：功能选择</p>
+<ul>
+<li>
+<p>帖子：所有的帖子都会集中到页面“帖子列表”中，你可使用下方“设计”这一侧边栏将这一元素放至于网站。无需多次同步，帖子将会自动更新至你的网站。</p>
+</li>
+<li>
+<p>页面：页面是独立的。不会出现在“帖子列表”中。帖子是会出现在列表中的。（你可以把它作为“关于”页，以此介绍自己）</p>
+</li>
+<li>
+<p>标签：你可以将帖子进行分类，打上不同的标签。</p>
+</li>
+<li>
+<p>设计：使用该功能可以定制你的网页主页以及帖子字体等，是一个不错的自定义工具。</p>
+</li>
+<li>
+<p>设置：在该侧边栏中可以更改你网站的名称，头像，域名，网站导航（它会固定显示在你网站的顶部）或者更多高级功能。</p>
+</li>
+<li>
+<p>访问统计：统计你的读者。所在位置使用的设备以及数量。</p>
+</li>
+</ul>
+<p>3.新帖子：点击此处可以新建一个帖子（有点像新建一个word，但是它是使用markdown进行编辑的）</p>
+<blockquote>
+<p>Tips： Markdown是一个标记语言。你可以通过 <a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法 | Markdown 官方教程</a> 进行学习，它会提高你编写的速度。</p>
+</blockquote>
+<p>4.顶部栏：<a href="gridea.dev">Gridea</a>还提供了许多其他的功能，你可以慢慢进行探索，让它成为你知识库搭建的一部分。</p>
+<p>5.个人：在这里，你可以查看你的个人信息以及付费情况等相关资料。</p>
+<h2 id="24dns解析">2.4DNS解析</h2>
+<blockquote>
+<p>Tips：域名与DNS解析内容见 <a href="https://kgthe.top/technology-yuming">信息技术-域名与DNS解析</a></p>
+</blockquote>
+<p>看到这里，你或许会疑惑：“诶，我的域名到底有什么用呢？”别急，让我们把域名“绑”在你的页面上。这时我们就需要进行DNS解析。</p>
+<p>我们还是以<a href="gridea.dev">Gridea</a>为例，我们可以在设置中看到“托管设置”这一部分。</p>
+<p><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/ainhkZ-GG.png" alt="" loading="lazy">接下来请打开您的域名控制面板。选择“DNS解析记录”，添加一条记录，根据托管设置中的内容**（不同托管平台所填写的内容不同，请一定注意）**进行填写记录，完成后点击“保存”</p>
+<p><img src="https://static.gridea.dev/9f60e493-50ae-446b-a957-bbafedb1675d/Jxlk-cpKI.png" alt="" loading="lazy">最后一步！回到<a href="gridea.dev">Gridea</a>设置，将你所购买的域名栏填写到“托管设置”（“域名”下方的填写栏），“魔法”大功告成！</p>
+<blockquote>
+<p>提示：不同的托管平台可能方式不同，但是原理都差不多，你可以根据您的托管平台进行调整。</p>
+</blockquote>
+
+        </div>
+
+        <!-- copyright -->
+        <div class="copyright">
+          <div class="container">
+            <p><small class="text-gray-400">
+                版权声明：此站点所有文章除特别声明外，均采用CC BY-NC-ND 4.0协议进行版权保护，您不得修改本文章任何部分，且转载需注明出处
+             </small></p>
+          </div>
+        </div>
+
+        <div class="text-center text-gray-300">
+          
+        </div>
+      </div>
+
+      
+
+      
+        <button type="button" class="collapsible">
+          <i class="ri-message-2-line"></i>
+        </button>
+        <div class="tcomment rounded-lg px-4 py-4">
+          <div id="tcomment"></div>
+        </div>  
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+
+    </div>
+
+
+    <!-- TOC Container -->
+    <div id="toc"
+      class="fixed right-0 bottom-0 mb-20 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight"
+      @click="showToc = true">
+      <i class="ri-menu-line font-bold"></i>
+    </div>
+
+    <div
+      class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 rounded-lg p-4 m-4  shadow-md bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast"
+      :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div
+          class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast"
+          @click="showToc = false">
+          <i class="ri-close-circle-fill"></i>
+        </div>
+      </div>
+      <div class="post-toc-container"><ul class="markdownIt-TOC">
+<li><a href="#%E4%B8%80what">一.What？</a></li>
+<li><a href="#%E4%BA%8Chow">二.How？</a>
+<ul>
+<li><a href="#21%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D">2.1购买域名</a></li>
+<li><a href="#22%E9%80%89%E6%8B%A9%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0">2.2选择托管平台</a></li>
+<li><a href="#23%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E8%B0%83%E6%95%B4">2.3托管平台的“初始化调整”</a></li>
+<li><a href="#24dns%E8%A7%A3%E6%9E%90">2.4DNS解析</a></li>
+</ul>
+</li>
+</ul>
+</div>
+    </div>
+
+    <!-- Back to top -->
+    <div
+      class="fixed right-0 bottom-0 mb-4 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200"
+      @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-circle-fill"></i>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>-->
+  <script src="https://tech.kegongteng.cn/media/scripts/vue.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/main.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/view-image.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/lazyload.min.js"></script>
+
+  <!--根据内容动态加载-->
+  <script type="text/javascript">
+    window.onload = function () {
+      //根据内容动态加载mermiad
+      if (document.getElementsByClassName("language-mermaid").length != 0) {
+        console.log("find mermaid")
+        for (let x of document.getElementsByClassName("language-mermaid")) {
+          if (x.nodeName == "CODE") {
+            let m = document.createElement("div");
+            m.classList.add("mermaid");
+            m.textContent = x.textContent;
+            x.parentNode.insertAdjacentElement("beforebegin", m);
+          }
+        }
+        let script = document.createElement('script');
+        defer = "defer";
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/mermaid.min.js";
+        document.body.append(script);
+        script.onload = function () {
+          mermaid.initialize({
+            startOnLoad: false
+          });
+          mermaid.init();
+          console.log("mermaid init done");
+        }
+      }
+
+      //bilibili 视频支持
+      var content = document.getElementsByClassName("language-bilibili")[0];
+      if (content != null) {
+        var m = document.createElement("div");
+        m.classList.add("bilibili-video");
+        m.innerHTML = content.textContent;
+        content.parentNode.insertAdjacentElement("beforeend", m);
+      }
+      //katex自适应加载
+      if (document.getElementsByClassName("katex").length != 0) {
+        let script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/katex.min.js";
+        document.body.append(script);
+        script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/copy-tex.min.js";
+        document.body.append(script);
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/katex.min.css";
+        document.body.append(link);
+        link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/copy-tex.css";
+        document.body.append(link);
+      }
+
+      script = document.createElement('script');
+      script.defer = "defer"
+      script.src =
+        "https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js";
+      document.body.append(script);
+      script.onload = function () {
+        let scripts = document.createElement('script');
+        scripts.append(document.createTextNode(
+          " twikoo.init({envId: \"https://twikoo24.kegongteng.cn\",el: \"#tcomment\",});"));
+        var parentDiv = document.getElementById("toc").parentNode;
+        var sp = document.getElementById("toc");
+        parentDiv.insertBefore(scripts, sp);
+      }
+    }
+  </script>
+  <script>
+   comment_collapse();
+   function replace_src() {
+    var imgEl = document.getElementsByTagName('img');
+    for (var i=0; i<imgEl.length; i++) {
+        if(imgEl[i].getAttribute('src')) {
+          imgEl[i].setAttribute('data-src',imgEl[i].getAttribute('src'));
+          imgEl[i].removeAttribute('src'); //use only if you need to remove data-src attribute after setting src
+          imgEl[i].removeAttribute('loading'); 
+          imgEl[i].setAttribute('class','lazy');
+        }
+      }
+    }
+    replace_src();
+    window.ViewImage && ViewImage.init('img');
+    var lazyLoadInstance = new LazyLoad({});
+    lazyLoadInstance.update();
+  </script>
+
+</body>
+
+</html>

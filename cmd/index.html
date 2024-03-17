@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3HNHcPQryX02hZpy",ck:"3HNHcPQryX02hZpy"})</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>CMD命令锦集 -
+    Kegongteng 信息技术札记</title>
+<meta name="ThemeName" content="Gridea Theme Rocky by EryouHao" />
+<meta name="referrer" content="always" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<link rel="manifest" href="/site.webmanifest">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet preload" as="style"> -->
+<link href="/media/css/remixicon.css" rel="stylesheet" as="font">
+<link rel="stylesheet" href="/media/css/tailwind.css">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="CMD命令锦集 -
+    Kegongteng 信息技术札记 - Atom Feed" href="/atom.xml">
+  
+
+    
+  <!-- <title name="CMD命令锦集"> </title> -->
+  <meta name="socialText" content="Blogger / Technophile / Student" />
+  <meta name="description" content="1. gpedit.msc—–组策略
+2. sndrec32——-录音机
+3. Nslookup——-IP地址侦测器 ，是一个 监测网络中 DNS 服务器是否能正确实现域名解析的命令行工具。 它在 Windows NT/2000/XP 中均..." />
+  <meta name="referrer" content="always" />
+  <link rel="canonical" href="https://tech.kegongteng.cn/cmd/" />
+  <link rel="preconnect" href="https://cdn.staticfile.org" />
+  <!-- Code Highlight -->
+  
+  <script src="https://tech.kegongteng.cn/media/prism.js"></script>
+  <script>
+    Prism.highlightAll();
+  </script>
+  
+  
+  <link rel="stylesheet preload"
+    href="https://tech.kegongteng.cn/media/css/prism-atom-dark.css"
+    as="style" />
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-circle-fill" v-show="showMenu"></i>
+      <i class="ri-menu-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="https://tech.kegongteng.cn" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        主页
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        文章
+      </a>
+    
+      <a href="https://tech.kegongteng.cn/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        专栏
+      </a>
+    
+      <a href="/friends" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        朋友
+      </a>
+    
+      <a href="https://zheary.com" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+   <!--<a href="https://tech.kegongteng.cn/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>-->
+  </nav>
+</div>
+    <a href="https://tech.kegongteng.cn"
+      class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Kegongteng 信息技术札记
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div
+        class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-32 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          CMD命令锦集
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">
+            2023-05-10 · 4 min read
+          </div>
+          
+          <a href="https://tech.kegongteng.cn/tag/2wWvVJ6Nq/"
+            class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+            <i class="ri-hashtag"></i>
+            其他
+          </a>
+          
+        </div>
+        <div class="markdown mb-16" v-pre>
+          <p>1. gpedit.msc—–组策略</p>
+<p>2. sndrec32——-录音机</p>
+<p>3. Nslookup——-IP地址侦测器 ，是一个 监测网络中 DNS 服务器是否能正确实现域名解析的命令行工具。 它在 Windows NT/2000/XP 中均可使用 , 但在 Windows 98 中却没有集成这一个工具。</p>
+<p>4. explorer——-打开资源管理器</p>
+<p>5. logoff———注销命令</p>
+<p>6. shutdown——-60秒倒计时关机命令</p>
+<p>7. lusrmgr.msc—-本机用户和组</p>
+<p>8. services.msc—本地服务设置</p>
+<p>9. oobe/msoobe /a—-检查XP是否激活</p>
+<p>10. notepad——–打开记事本</p>
+<p>11. cleanmgr——-垃圾整理</p>
+<p>12. net start messenger—-开始信使服务</p>
+<p>13. compmgmt.msc—计算机管理</p>
+<p>14. net stop messenger—–停止信使服务</p>
+<p>15. conf———–启动netmeeting</p>
+<p>16. dvdplay——–DVD播放器</p>
+<p>17. charmap——–启动字符映射表</p>
+<p>18. diskmgmt.msc—磁盘管理实用程序</p>
+<p>19. calc———–启动计算器</p>
+<p>20. dfrg.msc——-磁盘碎片整理程序</p>
+<p>21. chkdsk.exe—–Chkdsk磁盘检查</p>
+<p>22. devmgmt.msc— 设备管理器</p>
+<p>23. regsvr32 /u *.dll—-停止dll文件运行</p>
+<p>24. drwtsn32—— 系统医生</p>
+<p>25. rononce -p—-15秒关机</p>
+<p>26. dxdiag———检查DirectX信息</p>
+<p>27. regedt32——-注册表编辑器</p>
+<p>28. Msconfig.exe—系统配置实用程序</p>
+<p>29. rsop.msc——-组策略结果集</p>
+<p>30. mem.exe——–显示内存使用情况</p>
+<p>31. regedit.exe—-注册表</p>
+<p>32. winchat——–XP自带局域网聊天</p>
+<p>33. progman——–程序管理器</p>
+<p>34. winmsd———系统信息</p>
+<p>35. perfmon.msc—-计算机性能监测程序</p>
+<p>36. winver———检查Windows版本</p>
+<p>37. sfc /scannow—–扫描错误并复原</p>
+<p>38. taskmgr—–任务管理器（2000/xp/2003</p>
+<p>40. wmimgmt.msc—-打开windows管理体系结构(WMI)</p>
+<p>41. wupdmgr——–windows更新程序</p>
+<p>42. wscript——–windows脚本宿主设置</p>
+<p>43. write———-写字板</p>
+<p>45. wiaacmgr——-扫描仪和照相机向导</p>
+<p>46. winchat——–XP自带局域网聊天</p>
+<p>49. mplayer2——-简易widnows media player</p>
+<p>50. mspaint——–画图板</p>
+<p>51. mstsc———-远程桌面连接</p>
+<p>53. magnify——–放大镜实用程序</p>
+<p>54. mmc————打开控制台</p>
+<p>55. mobsync——–同步命令</p>
+<p>57. iexpress——-木马捆绑工具，系统自带</p>
+<p>58. fsmgmt.msc—–共享文件夹管理器</p>
+<p>59. utilman——–辅助工具管理器</p>
+<p>61. dcomcnfg——-打开系统组件服务</p>
+<p>62. ddeshare——-打开DDE共享设置</p>
+<p>110. osk————打开屏幕键盘</p>
+<p>111. odbcad32——-ODBC数据源管理器</p>
+<p>112. oobe/msoobe /a—-检查XP是否激活</p>
+<p>68. ntbackup——-系统备份和还原</p>
+<p>69. narrator——-屏幕“讲述人”</p>
+<p>70. ntmsmgr.msc—-移动存储管理器</p>
+<p>71. ntmsoprq.msc—移动存储管理员操作请求</p>
+<p>72. netstat -an—-(TC)命令检查接口</p>
+<p>73. syncapp——–创建一个公文包</p>
+<p>74. sysedit——–系统配置编辑器</p>
+<p>75. sigverif——-文件签名验证程序</p>
+<p>76. ciadv.msc——索引服务程序</p>
+<p>77. shrpubw——–创建共享文件夹</p>
+<p>78. secpol.msc—–本地安全策略</p>
+<p>79. syskey———系统加密，一旦加密就不能解开，保护windows xp系统的双重密码</p>
+<p>80. services.msc—本地服务设置</p>
+<p>81. Sndvol32——-音量控制程序</p>
+<p>82. sfc.exe——–系统文件检查器</p>
+<p>83. sfc /scannow—windows文件保护</p>
+<p>84. ciadv.msc——索引服务程序</p>
+<p>85. tourstart——xp简介（安装完成后出现的漫游xp程序）</p>
+<p>86. taskmgr——–任务管理器</p>
+<p>87. eventvwr——-事件查看器</p>
+<p>88. eudcedit——-造字程序</p>
+<p>89. compmgmt.msc—计算机管理</p>
+<p>90. packager——-对象包装程序</p>
+<p>91. perfmon.msc—-计算机性能监测程序</p>
+<p>92. charmap——–启动字符映射表</p>
+<p>93. cliconfg——-SQL SERVER 客户端网络实用程序</p>
+<p>94. Clipbrd——–剪贴板查看器</p>
+<p>95. conf———–启动netmeeting</p>
+<p>96. certmgr.msc—-证书管理实用程序</p>
+<p>97. regsvr32 /u *.dll—-停止dll文件运行</p>
+<p>98. regsvr32 /u zipfldr.dll——取消ZIP支持</p>
+<p>99. cmd.exe——–CMD命令提示符</p>
+
+        </div>
+
+        <!-- copyright -->
+        <div class="copyright">
+          <div class="container">
+            <p><small class="text-gray-400">
+                版权声明：此站点所有文章除特别声明外，均采用CC BY-NC-ND 4.0协议进行版权保护，您不得修改本文章任何部分，且转载需注明出处
+             </small></p>
+          </div>
+        </div>
+
+        <div class="text-center text-gray-300">
+          
+        </div>
+      </div>
+
+      
+
+      
+        <button type="button" class="collapsible">
+          <i class="ri-message-2-line"></i>
+        </button>
+        <div class="tcomment rounded-lg px-4 py-4">
+          <div id="tcomment"></div>
+        </div>  
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+
+    </div>
+
+
+    <!-- TOC Container -->
+    <div id="toc"
+      class="fixed right-0 bottom-0 mb-20 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight"
+      @click="showToc = true">
+      <i class="ri-menu-line font-bold"></i>
+    </div>
+
+    <div
+      class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 rounded-lg p-4 m-4  shadow-md bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast"
+      :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div
+          class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast"
+          @click="showToc = false">
+          <i class="ri-close-circle-fill"></i>
+        </div>
+      </div>
+      <div class="post-toc-container"></div>
+    </div>
+
+    <!-- Back to top -->
+    <div
+      class="fixed right-0 bottom-0 mb-4 mr-6 shadow w-12 h-12 rounded-lg flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200"
+      @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-circle-fill"></i>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>-->
+  <script src="https://tech.kegongteng.cn/media/scripts/vue.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/main.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/view-image.min.js"></script>
+  <script src="https://tech.kegongteng.cn/media/scripts/lazyload.min.js"></script>
+
+  <!--根据内容动态加载-->
+  <script type="text/javascript">
+    window.onload = function () {
+      //根据内容动态加载mermiad
+      if (document.getElementsByClassName("language-mermaid").length != 0) {
+        console.log("find mermaid")
+        for (let x of document.getElementsByClassName("language-mermaid")) {
+          if (x.nodeName == "CODE") {
+            let m = document.createElement("div");
+            m.classList.add("mermaid");
+            m.textContent = x.textContent;
+            x.parentNode.insertAdjacentElement("beforebegin", m);
+          }
+        }
+        let script = document.createElement('script');
+        defer = "defer";
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/mermaid.min.js";
+        document.body.append(script);
+        script.onload = function () {
+          mermaid.initialize({
+            startOnLoad: false
+          });
+          mermaid.init();
+          console.log("mermaid init done");
+        }
+      }
+
+      //bilibili 视频支持
+      var content = document.getElementsByClassName("language-bilibili")[0];
+      if (content != null) {
+        var m = document.createElement("div");
+        m.classList.add("bilibili-video");
+        m.innerHTML = content.textContent;
+        content.parentNode.insertAdjacentElement("beforeend", m);
+      }
+      //katex自适应加载
+      if (document.getElementsByClassName("katex").length != 0) {
+        let script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/katex.min.js";
+        document.body.append(script);
+        script = document.createElement('script');
+        script.defer = "defer"
+        script.src =
+          "https://tech.kegongteng.cn/media/scripts/copy-tex.min.js";
+        document.body.append(script);
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/katex.min.css";
+        document.body.append(link);
+        link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.defer = "defer"
+        link.href =
+          "https://tech.kegongteng.cn/media/css/copy-tex.css";
+        document.body.append(link);
+      }
+
+      script = document.createElement('script');
+      script.defer = "defer"
+      script.src =
+        "https://cdn.staticfile.org/twikoo/1.6.31/twikoo.all.min.js";
+      document.body.append(script);
+      script.onload = function () {
+        let scripts = document.createElement('script');
+        scripts.append(document.createTextNode(
+          " twikoo.init({envId: \"https://twikoo24.kegongteng.cn\",el: \"#tcomment\",});"));
+        var parentDiv = document.getElementById("toc").parentNode;
+        var sp = document.getElementById("toc");
+        parentDiv.insertBefore(scripts, sp);
+      }
+    }
+  </script>
+  <script>
+   comment_collapse();
+   function replace_src() {
+    var imgEl = document.getElementsByTagName('img');
+    for (var i=0; i<imgEl.length; i++) {
+        if(imgEl[i].getAttribute('src')) {
+          imgEl[i].setAttribute('data-src',imgEl[i].getAttribute('src'));
+          imgEl[i].removeAttribute('src'); //use only if you need to remove data-src attribute after setting src
+          imgEl[i].removeAttribute('loading'); 
+          imgEl[i].setAttribute('class','lazy');
+        }
+      }
+    }
+    replace_src();
+    window.ViewImage && ViewImage.init('img');
+    var lazyLoadInstance = new LazyLoad({});
+    lazyLoadInstance.update();
+  </script>
+
+</body>
+
+</html>
